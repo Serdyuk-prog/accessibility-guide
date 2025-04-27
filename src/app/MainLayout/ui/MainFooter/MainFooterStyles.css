@@ -38,6 +38,11 @@
     gap: 0px;
     padding: 30px 0px;
     line-height: 36px;
+    p {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
   }
 
 }
