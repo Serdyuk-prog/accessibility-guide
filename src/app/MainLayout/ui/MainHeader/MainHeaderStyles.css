@@ -1,8 +1,32 @@
 .main-header {
   display: flex;
-  justify-content: center;
+  height: 60px;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 50px;
-  background-color: red;
+  /* width: calc(100vw-60px);
+  margin: 0px 30px; */
+  padding-inline: 80px;
+  /* border-bottom: 1px solid black; */
+
+  background-color: white;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  position: fixed;
+  width: calc(100vw - 160px);
+  top: 0;
+  left: 0;
+}
+
+.main-header-logo {
+  color: #3767CB;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.main-header-links {
+  display: flex;
+  gap: 20px;
+  a {
+    font-size: 20px;
+    font-weight: 500;
+  }
 }

@@ -6,7 +6,12 @@
 }
 
 .main-content {
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  width: 1560px;
+  align-self: center;
+  margin-bottom: 30px;
 }
+

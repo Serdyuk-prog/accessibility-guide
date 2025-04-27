@@ -40,3 +40,45 @@
 .read-the-docs {
   color: #888;
 }
+
+
+a {
+  color: #0B0F19;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3767CB;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+}
