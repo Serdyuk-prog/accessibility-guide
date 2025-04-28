@@ -1,17 +1,31 @@
 .main-layout {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 100%;
   min-height: 100vh;
+  width: 100%;
 }
 
-.main-content {
+.main-content { 
+  box-sizing: border-box;
   margin-top: 60px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  width: 1560px;
+  width: 70%;
   align-self: center;
   margin-bottom: 30px;
 }
 
+@media (max-width: 1024px) {
+  .main-content { 
+    width: 80%;    
+  }
+}
+
+
+@media (max-width: 720px) {
+  .main-content { 
+    width: 90%; 
+  }
+}
