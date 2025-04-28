@@ -3,7 +3,7 @@ import './App.css';
 import { HomePage } from '@/pages/HomePage/HomePage';
 import { MainLayout } from './MainLayout/MainLayout';
 
-function App() {
+const App = () => {
   return (
     <MainLayout>
       <BrowserRouter>
@@ -14,6 +14,6 @@ function App() {
       </BrowserRouter>
     </MainLayout>
   );
-}
+};
 
 export default App;
