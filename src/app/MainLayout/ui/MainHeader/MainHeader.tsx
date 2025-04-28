@@ -8,14 +8,18 @@ export const MainHeader = () => {
   const hamburgerButtonRef = useRef<HTMLButtonElement>(null);
   const { width } = useWindowSize();
   return (
-    <header className="main-header" aria-label="Главное меню">
+    <header className="main-header">
       <div>
         <a className="main-header-logo" href="/">
           WCAG 2.2
         </a>
       </div>
       {width > 1024 && (
-        <nav className="main-header-links" role="navigation">
+        <nav
+          className="main-header-links"
+          role="navigation"
+          aria-label="Главное меню"
+        >
           <a href="/">Воспринимаемость</a>
           <a href="/">Управляемость</a>
         </nav>
