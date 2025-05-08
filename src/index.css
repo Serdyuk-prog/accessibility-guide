@@ -17,6 +17,10 @@ body {
   margin: 0;
 }
 
+:has(.dialog-modal[open]) {
+  overflow: hidden;
+}
+
 /* a {
   font-weight: 500;
   color: #646cff;

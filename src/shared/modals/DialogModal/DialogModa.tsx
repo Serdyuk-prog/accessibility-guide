@@ -23,7 +23,7 @@ const DialogModal = (props: IDialogModalProps) => {
   }, [ref]);
 
   return (
-    <dialog ref={ref} id="closeMe" aria-labelledby="heading">
+    <dialog ref={ref} id="closeMe" className='dialog-modal' aria-labelledby="heading">
       <h2 id="heading">Закрой меня! 🙏</h2>
       <p>Результат этих кнопок одинаковый.</p>
 

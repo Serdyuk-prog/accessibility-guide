@@ -20,7 +20,7 @@ const overlayStyles: React.CSSProperties = {
   left: 0,
   width: '100vw',
   height: '100vh',
-  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  backgroundColor: 'rgba(9, 9, 9, 0.4)',
   zIndex: 999,
 };
 
@@ -50,7 +50,7 @@ const BlockModal = ({ show, onAction, onCancel }: IBlockModalProps) => {
   const handleFocusTrap = (event: KeyboardEvent) => {
     if (event.key === 'Tab' && modalRef.current) {
       const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
-        'button'
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       );
       const firstElement = focusableElements[0];
       const lastElement = focusableElements[focusableElements.length - 1];
@@ -71,6 +71,7 @@ const BlockModal = ({ show, onAction, onCancel }: IBlockModalProps) => {
 
   useEffect(() => {
     if (show) {
+      document.body.style.overflow = 'hidden';
       document.addEventListener('keydown', handleKeyDown);
       document.addEventListener('keydown', handleFocusTrap);
       modalRef.current?.focus();
@@ -78,6 +79,7 @@ const BlockModal = ({ show, onAction, onCancel }: IBlockModalProps) => {
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('keydown', handleFocusTrap);
+      document.body.style.overflow = '';
     };
   }, [show, onAction]);
 
@@ -91,6 +93,7 @@ const BlockModal = ({ show, onAction, onCancel }: IBlockModalProps) => {
         tabIndex={-1}
       >
         <h1>I'm a Modal!</h1>
+        <button onClick={onAction}>Hide Me</button>
         <button onClick={onAction}>Hide Me</button>
         {onCancel && <button onClick={onCancel}>Cancel</button>}
       </div>
