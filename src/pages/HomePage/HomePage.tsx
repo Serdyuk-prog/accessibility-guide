@@ -4,17 +4,25 @@ import { useRef, useState } from 'react';
 
 export const HomePage = () => {
   const [showBlockModal, setShowBlockModal] = useState(false);
+  const showModalRef = useRef<HTMLButtonElement>(null);
   // const [showDialogModal, setShowDialogModal] = useState(false);
-  const modalRef = useRef<React.RefObject<HTMLDialogElement>>(null);
+  const modalRef = useRef<HTMLDialogElement>(null);
 
-  const toggleBlockModal = () => setShowBlockModal((state) => !state);
+  const toggleBlockModal = () => {
+    setShowBlockModal((state) => !state);
+    if (showBlockModal) {
+      showModalRef.current?.focus()
+    }
+  };
 
   return (
     <>
       <div>
         <h1>HomePage</h1>
-        <button onClick={toggleBlockModal}>Show BlockModal</button>
-        <button onClick={() => modalRef.current?.showModal()}>Show DialogModal</button>
+        <button ref={showModalRef} onClick={(e) => toggleBlockModal(e)}>Show BlockModal</button>
+        <button onClick={() => modalRef.current?.showModal()}>
+          Show DialogModal
+        </button>
         {Array.from({ length: 10 }, (_, i) => (
           <p key={i}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
@@ -24,6 +32,10 @@ export const HomePage = () => {
           </p>
         ))}
       </div>
+      <br />
+      <br />
+      <br />
+
       <BlockModal show={showBlockModal} onAction={toggleBlockModal} />
       <DialogModal ref={modalRef} />
     </>
