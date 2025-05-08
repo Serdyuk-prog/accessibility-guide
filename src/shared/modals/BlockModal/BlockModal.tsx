@@ -1,28 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-
-const modalStyles: React.CSSProperties = {
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '300px',
-  padding: '20px',
-  backgroundColor: 'white',
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  borderRadius: '8px',
-  zIndex: 1000,
-};
-
-const overlayStyles: React.CSSProperties = {
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  width: '100vw',
-  height: '100vh',
-  backgroundColor: 'rgba(9, 9, 9, 0.4)',
-  zIndex: 999,
-};
+import './BlockModal.css'
 
 interface IBlockModalProps {
   show: boolean;
@@ -85,11 +63,11 @@ const BlockModal = ({ show, onAction, onCancel }: IBlockModalProps) => {
 
   if (!show) return null;
   return createPortal(
-    <div style={overlayStyles} onClick={handleOverlayClick}>
+    <div className='block-modal-overlay' onClick={handleOverlayClick}>
       <div
-        style={modalStyles}
-        onClick={(e) => e.stopPropagation()}
         ref={modalRef}
+        className='block-modal'
+        onClick={(e) => e.stopPropagation()}
         tabIndex={-1}
       >
         <h1>I'm a Modal!</h1>

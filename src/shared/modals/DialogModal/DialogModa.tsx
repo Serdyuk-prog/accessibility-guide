@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import './DialogModal.css';
+import { createPortal } from 'react-dom';
 
 interface IDialogModalProps {
-  ref: React.RefObject<HTMLDialogElement| null>;
+  ref: React.RefObject<HTMLDialogElement | null>;
 }
 
 const DialogModal = (props: IDialogModalProps) => {
@@ -22,15 +24,20 @@ const DialogModal = (props: IDialogModalProps) => {
     });
   }, [ref]);
 
-  return (
-    <dialog ref={ref} id="closeMe" className='dialog-modal' aria-labelledby="heading">
+  return createPortal(
+    <dialog
+      ref={ref}
+      className="dialog-modal"
+      aria-labelledby="heading"
+    >
       <h2 id="heading">Закрой меня! 🙏</h2>
       <p>Результат этих кнопок одинаковый.</p>
 
       <button type="button" onClick={() => ref?.current?.close()}>
         Закрыть с помощью JavaScript
       </button>
-    </dialog>
+    </dialog>,
+    document.body
   );
 };
 
