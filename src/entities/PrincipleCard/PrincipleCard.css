@@ -25,7 +25,6 @@
 .principle-card-wrapper {
   width: 340px;
   min-height: 340px;
-  height: 100%;
   display: flex;
   flex-direction: column;
 }

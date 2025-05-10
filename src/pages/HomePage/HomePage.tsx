@@ -5,12 +5,14 @@ import './HomePage.css';
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import { TextLink } from '@/shared/ui/TextLink/TextLink';
 import { ButtonLink } from '@/shared/ui/ButtonLink/ButtonLink';
+import useWindowSize from '@/shared/customHooks/useWindowSize';
 
 export const HomePage = () => {
   const [showBlockModal, setShowBlockModal] = useState(false);
   const showModalRef = useRef<HTMLButtonElement>(null);
   // const [showDialogModal, setShowDialogModal] = useState(false);
   const modalRef = useRef<HTMLDialogElement>(null);
+  const { width } = useWindowSize();
 
   const toggleBlockModal = () => {
     setShowBlockModal((state) => !state);
@@ -22,9 +24,9 @@ export const HomePage = () => {
   return (
     <>
       {/* <Emoji name="check-mark-button" /> */}
-      <div className="page-wrapper">
+      <div className="home-page-wrapper">
         <h1> Веб-доступность: цифровая инклюзивность для всех</h1>
-        <p className="subheading">
+        <p className={width > 720 ? "subheading" : ""}>
           Веб-доступность — это практика создания сайтов и приложений, которыми
           могут пользоваться люди с любыми возможностями. Она обеспечивает
           равный доступ к информации и сервисам, независимо от физических или
@@ -43,7 +45,7 @@ export const HomePage = () => {
             content={
               'Контент должен быть доступен для восприятия разными способами (текст, аудио, альтернативные описания).'
             }
-            linkAddress="/home"
+            linkAddress="/perceivable"
             linkText="Подробнее"
           />
           <PrincipleCard
@@ -107,7 +109,7 @@ export const HomePage = () => {
           </p>
           <ul>
             <li>
-              <TextLink href="/">Воспринимаемость</TextLink>
+              <TextLink href="/perceivable">Воспринимаемость</TextLink>
             </li>
             <li>
               <TextLink href="/">Управляемость</TextLink>

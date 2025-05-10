@@ -21,7 +21,7 @@ export const MainHeader = () => {
           role="navigation"
           aria-label="Главное меню"
         >
-          <Link to="/">Воспринимаемость</Link>
+          <Link to="/perceivable">Воспринимаемость</Link>
           <Link to="/">Управляемость</Link>
         </nav>
       )}
@@ -56,7 +56,7 @@ export const MainHeader = () => {
           </button>
           {menuActive && (
             <div className="hamburger-navigation">
-              <Link to="/">Воспринимаемость</Link>
+              <Link to="/perceivable">Воспринимаемость</Link>
               <Link to="/">Управляемость</Link>
             </div>
           )}

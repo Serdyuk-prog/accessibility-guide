@@ -31,7 +31,7 @@ export const PrincipleCard = (props: IPrincipleCardProps) => {
           <div className="principle-card-content">
             {icon && <Emoji name={icon} className="principle-card-icon" />}
             <h4 className="principle-card-header">{header}</h4>
-            <p>{content}</p>
+            <div>{content}</div>
           </div>
           {buttonText && <Button onClick={onButtonClick}>{buttonText}</Button>}
           {linkText && linkAddress && (

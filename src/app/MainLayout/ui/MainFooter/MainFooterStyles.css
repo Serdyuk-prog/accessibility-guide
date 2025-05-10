@@ -22,7 +22,14 @@
     width: 100%;
     display: flex;
     align-items: flex-start;
-    gap: 100px
+    gap: 100px;
+    flex-wrap: wrap;
+
+    .main-footer-logo {
+      color: #3767CB;
+      font-size: 18px;
+      font-weight: 700;
+    }
   }
 
   .main-footer-nav {

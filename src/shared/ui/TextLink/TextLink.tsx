@@ -10,7 +10,7 @@ interface ITextLinkProps {
 export const TextLink = ({ children, href, isExternal }: ITextLinkProps) => {
   if (isExternal) {
     return (
-      <a href={href} className="text-link">
+      <a href={href} target="_blank" className="text-link">
         {children}
       </a>
     );
