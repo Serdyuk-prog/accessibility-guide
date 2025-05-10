@@ -1,3 +1,4 @@
+import { TextLink } from '@/shared/ui/TextLink/TextLink';
 import './MainFooterStyles.css';
 import logo from '@shared/assets/a11y.svg';
 export const MainFooter = () => {
@@ -9,18 +10,22 @@ export const MainFooter = () => {
             >
                 <div>WCAG 2.2</div>
                 <div className="main-footer-links">
-                    <span>Карта сайта</span>
-                    <a href="/">Воспринимаемость</a>
+                    <span>Карта сайта:</span>
+                    <TextLink href="/">Воспринимаемость</TextLink>
+                    <TextLink href="/">Управляемость</TextLink>
+                    <TextLink href="/">Понятность</TextLink>
+                    <TextLink href="/">Надежность</TextLink>
+                    {/* <a href="/">Воспринимаемость</a>
                     <a href="/">Управляемость</a>
                     <a href="/">Понятность</a>
-                    <a href="/">Надежность</a>
+                    <a href="/">Надежность</a> */}
                 </div>
                 <div className="main-footer-links">
                     <span>Полезные ссылки</span>
-                    <a href="/">Ссылка 1</a>
-                    <a href="/">Ссылка 2</a>
-                    <a href="/">Ссылка 3</a>
-                    <a href="/">Ссылка 4</a>
+                    <TextLink href="/">Ссылка 1</TextLink>
+                    <TextLink href="/">Ссылка 2</TextLink>
+                    <TextLink href="/">Ссылка 3</TextLink>
+                    <TextLink href="/">Ссылка 4</TextLink>
                 </div>
             </nav>
             <div className="main-footer-block main-footer-copyright">

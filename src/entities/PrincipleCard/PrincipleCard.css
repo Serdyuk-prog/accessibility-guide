@@ -1,0 +1,31 @@
+.principle-card-header {
+ text-align: center;
+}
+
+.principle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-grow: 1;
+  .principle-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.principle-card-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.principle-card-wrapper {
+  width: 340px;
+  min-height: 340px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

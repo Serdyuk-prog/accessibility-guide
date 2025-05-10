@@ -3,6 +3,7 @@ import './MainHeaderStyles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import useWindowSize from '@/shared/customHooks/useWindowSize';
+import { Link } from 'react-router';
 export const MainHeader = () => {
   const [menuActive, setMenuActive] = useState(false);
   const hamburgerButtonRef = useRef<HTMLButtonElement>(null);
@@ -20,8 +21,8 @@ export const MainHeader = () => {
           role="navigation"
           aria-label="Главное меню"
         >
-          <a href="/">Воспринимаемость</a>
-          <a href="/">Управляемость</a>
+          <Link to="/">Воспринимаемость</Link>
+          <Link to="/">Управляемость</Link>
         </nav>
       )}
 
@@ -55,8 +56,8 @@ export const MainHeader = () => {
           </button>
           {menuActive && (
             <div className="hamburger-navigation">
-              <a href="/">Воспринимаемость</a>
-              <a href="/">Управляемость</a>
+              <Link to="/">Воспринимаемость</Link>
+              <Link to="/">Управляемость</Link>
             </div>
           )}
         </nav>
