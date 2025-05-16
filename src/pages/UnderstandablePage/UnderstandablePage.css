@@ -1,0 +1,25 @@
+.understandable-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  padding-top: 40px;
+
+  .subheading {
+    width: 50%;
+  }
+
+  .cards-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: space-around;
+  }
+
+  .page-navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
