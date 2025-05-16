@@ -22,11 +22,11 @@ export const MainHeader = () => {
           aria-label="Главное меню"
         >
           <Link to="/perceivable">Воспринимаемость</Link>
-          <Link to="/">Управляемость</Link>
-          <Link to="/">Понятность</Link>
-          <Link to="/">Надежность</Link>
+          <Link to="/operable">Управляемость</Link>
+          <Link to="/understandable">Понятность</Link>
+          <Link to="/robust">Надежность</Link>
           <span>|</span>
-          <Link to="/">Практика</Link>
+          <Link to="/modal">Практика</Link>
         </nav>
       )}
 

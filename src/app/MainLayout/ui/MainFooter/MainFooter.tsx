@@ -16,13 +16,10 @@ export const MainFooter = () => {
         <div className="main-footer-links">
           <span>Карта сайта:</span>
           <TextLink href="/perceivable">Воспринимаемость</TextLink>
-          <TextLink href="/">Управляемость</TextLink>
-          <TextLink href="/">Понятность</TextLink>
-          <TextLink href="/">Надежность</TextLink>
-          {/* <a href="/">Воспринимаемость</a>
-                    <a href="/">Управляемость</a>
-                    <a href="/">Понятность</a>
-                    <a href="/">Надежность</a> */}
+          <TextLink href="/operable">Управляемость</TextLink>
+          <TextLink href="/understandable">Понятность</TextLink>
+          <TextLink href="/robust">Надежность</TextLink>
+          <TextLink href="/modal">Практика</TextLink>
         </div>
         <div className="main-footer-links">
           <span>Полезные ссылки</span>

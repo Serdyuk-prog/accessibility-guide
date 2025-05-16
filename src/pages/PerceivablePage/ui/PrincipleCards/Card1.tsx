@@ -53,7 +53,6 @@ export const Card1 = () => {
         content={
           'Контент должен быть доступен для восприятия разными способами (текст, аудио, альтернативные описания).'
         }
-        linkAddress="/perceivable"
         buttonText="Пример alt текста"
         onButtonClick={toggleBlockModal}
         buttonRef={showModalRef as React.RefObject<HTMLButtonElement>}

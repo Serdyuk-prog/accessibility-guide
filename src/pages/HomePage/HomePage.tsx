@@ -54,14 +54,14 @@ export const HomePage = () => {
             content={
               'Интерфейс должен работать с клавиатурой, не требовать быстрой реакции и быть предсказуемым.'
             }
-            linkAddress="/home"
+            linkAddress="/operable"
             linkText="Подробнее"
           />
           <PrincipleCard
             header="Понятность"
             icon="brain"
             content={'Информация и навигация должны быть интуитивно понятными.'}
-            linkAddress="/home"
+            linkAddress="/understandable"
             linkText="Подробнее"
           />
           <PrincipleCard
@@ -70,7 +70,7 @@ export const HomePage = () => {
             content={
               'Сайт должен корректно работать с различными технологиями, включая скринридеры.'
             }
-            linkAddress="/home"
+            linkAddress="/robust"
             linkText="Подробнее"
           />
         </div>
