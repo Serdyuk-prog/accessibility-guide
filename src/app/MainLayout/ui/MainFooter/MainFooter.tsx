@@ -32,7 +32,9 @@ export const MainFooter = () => {
           <TextLink href="https://handbook.floeproject.org/">
             Inclusive Learning Design Handbook
           </TextLink>
-          <TextLink href="/">Ссылка 4</TextLink>
+          <TextLink href="https://developer.mozilla.org/ru/docs/Web/HTML/Reference/Elements/dialog">
+            HTML-элемент {'<dialog>'}
+          </TextLink>
         </div>
       </nav>
       <div className="main-footer-block main-footer-copyright">

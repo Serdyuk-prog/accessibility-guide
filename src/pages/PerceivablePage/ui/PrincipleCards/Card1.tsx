@@ -35,11 +35,7 @@ export const Card1 = () => {
   const showModalRef = useRef<HTMLButtonElement>(null);
 
   const toggleBlockModal = () => {
-    console.log('toggleBlockModal');
-
     setShowBlockModal((state) => !state);
-    console.log("showModalRef.current", showModalRef.current);
-    
     if (showBlockModal) {
       showModalRef.current?.focus();
     }
