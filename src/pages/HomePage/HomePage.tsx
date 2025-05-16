@@ -33,7 +33,7 @@ export const HomePage = () => {
           когнитивных особенностей. В этом руководстве вы узнаете, как сделать
           цифровые продукты доступными, следуя стандартам WCAG.
         </p>
-        <h3>Основные принципы веб-доступности</h3>
+        <h2>Основные принципы веб-доступности</h2>
         {/* <button ref={showModalRef} onClick={(e) => toggleBlockModal(e)}>Show BlockModal</button>
         <button onClick={() => modalRef.current?.showModal()}>
           Show DialogModal
@@ -75,7 +75,7 @@ export const HomePage = () => {
           />
         </div>
 
-        <h3>Почему доступность важна?</h3>
+        <h2>Почему доступность важна?</h2>
         <div className="cards-wrapper">
           <PrincipleCard
             icon="bar-chart"
@@ -100,7 +100,7 @@ export const HomePage = () => {
           />
         </div>
 
-        <h3>Структура сайта</h3>
+        <h2>Структура сайта</h2>
         <section>
           <p>
             Сайт разделён на пять основных разделов: введение (эта страница),
@@ -140,7 +140,7 @@ export const HomePage = () => {
             </span>
             начинается здесь
           </h2>
-          <h5>Проложи свою дрогу к интернету для всех</h5>
+          <div style={{fontSize: "20px", fontWeight: 600}}>Проложи свою дрогу к интернету для всех</div>
           <ButtonLink href="/home">Начать изучение принципов!</ButtonLink>
         </section>
       </div>

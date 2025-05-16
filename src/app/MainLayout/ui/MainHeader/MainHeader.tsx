@@ -23,6 +23,10 @@ export const MainHeader = () => {
         >
           <Link to="/perceivable">Воспринимаемость</Link>
           <Link to="/">Управляемость</Link>
+          <Link to="/">Понятность</Link>
+          <Link to="/">Надежность</Link>
+          <span>|</span>
+          <Link to="/">Практика</Link>
         </nav>
       )}
 

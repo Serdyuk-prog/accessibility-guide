@@ -1,27 +1,38 @@
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import './BlockModal.css'
+import './BlockModal.css';
+import { Button } from '@/shared/ui/Button/Button';
 
 interface IBlockModalProps {
   show: boolean;
-  onAction: () => void;
-  onCancel?: () => void;
+  header: string;
+  content: React.ReactNode;
+  buttonText: string;
+  onCancel: () => void;
+  cancelButtonText?: string;
+  onAction?: () => void;
 }
 
-const BlockModal = ({ show, onAction, onCancel }: IBlockModalProps) => {
+const BlockModal = ({
+  show,
+  header,
+  content,
+  buttonText,
+  cancelButtonText,
+  onAction,
+  onCancel,
+}: IBlockModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleOverlayClick = () => {
     if (onCancel) {
       onCancel();
-    } else {
-      onAction();
     }
   };
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
-      onAction();
+      onCancel();
     }
   };
 
@@ -59,21 +70,29 @@ const BlockModal = ({ show, onAction, onCancel }: IBlockModalProps) => {
       document.removeEventListener('keydown', handleFocusTrap);
       document.body.style.overflow = '';
     };
-  }, [show, onAction]);
+  }, [show]);
 
   if (!show) return null;
   return createPortal(
-    <div className='block-modal-overlay' onClick={handleOverlayClick}>
+    <div className="block-modal-overlay" onClick={handleOverlayClick}>
       <div
         ref={modalRef}
-        className='block-modal'
+        className="block-modal"
         onClick={(e) => e.stopPropagation()}
         tabIndex={-1}
       >
-        <h1>I'm a Modal!</h1>
-        <button onClick={onAction}>Hide Me</button>
-        <button onClick={onAction}>Hide Me</button>
-        {onCancel && <button onClick={onCancel}>Cancel</button>}
+        <span className="block-modal-header">{header}</span>
+        {content}
+        <div className="block-modal-actions">
+          {onAction && buttonText && (
+            <Button onClick={onAction}>{buttonText}</Button>
+          )}
+          {cancelButtonText && (
+            <Button type="secondary" onClick={onCancel}>
+              {cancelButtonText}
+            </Button>
+          )}
+        </div>
       </div>
     </div>,
     document.body
@@ -81,4 +100,3 @@ const BlockModal = ({ show, onAction, onCancel }: IBlockModalProps) => {
 };
 
 export default BlockModal;
-

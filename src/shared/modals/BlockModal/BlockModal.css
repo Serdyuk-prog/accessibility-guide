@@ -13,10 +13,31 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  padding: 20px;
+  width: 540px;
+  padding: 30px 40px;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   z-index: 1000;
+}
+
+
+.block-modal-header{
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.block-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  .block-modal {
+    width: 80%;
+  }
+  
 }

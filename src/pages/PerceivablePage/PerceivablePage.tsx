@@ -1,82 +1,48 @@
 import './PerceivablePage.css';
-import BlockModal from '@/shared/modals/BlockModal/BlockModal';
-import DialogModal from '@/shared/modals/DialogModal/DialogModa';
-import { useRef, useState } from 'react';
-import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import { TextLink } from '@/shared/ui/TextLink/TextLink';
 import { ButtonLink } from '@/shared/ui/ButtonLink/ButtonLink';
 import useWindowSize from '@/shared/customHooks/useWindowSize';
+import { ComparisonCard } from '@/entities/ComparisonCard/ComparisonCard';
+import {
+  ContentComparisonCard1Error,
+  ContentComparisonCard1Success,
+  ContentComparisonCard2Error,
+  ContentComparisonCard2Success,
+} from './ui/ContentComparisonCards';
+import { Card1 } from './ui/PrincipleCards/Card1';
+import { Card2 } from './ui/PrincipleCards/Card2';
+import { Card3 } from './ui/PrincipleCards/Card3';
 
 export const PerceivablePage = () => {
-  const [showBlockModal, setShowBlockModal] = useState(false);
-  const showModalRef = useRef<HTMLButtonElement>(null);
-  // const [showDialogModal, setShowDialogModal] = useState(false);
-  const modalRef = useRef<HTMLDialogElement>(null);
   const { width } = useWindowSize();
-
-  const toggleBlockModal = () => {
-    setShowBlockModal((state) => !state);
-    if (showBlockModal) {
-      showModalRef.current?.focus();
-    }
-  };
-
-  const ContentMultimediaCard = () => {
-    return (
-      <>
-        <p>
-          Важно адаптировать контент для пользователей с нарушениями слуха или
-          зрения.
-        </p>
-        <ul>
-          <li>Субтитры для видео.</li>
-          <li>Аудиоописание для визуального контента.</li>
-          <li>Транскрипты для аудио.</li>
-        </ul>
-      </>
-    );
-  };
 
   return (
     <>
-      {/* <Emoji name="check-mark-button" /> */}
       <div className="principal-page-wrapper">
         <h1>Воспринимаемость: доступность контента</h1>
-        <p className={width > 720 ? "subheading" : ""}>
+        <p className={width > 720 ? 'subheading' : ''}>
           Принцип "Воспринимаемость" означает, что информация на сайте должна
           быть доступна независимо от сенсорных возможностей пользователя. Это
           включает альтернативные описания для изображений, субтитры для видео,
           адаптацию цветов и шрифтов для людей с нарушениями зрения.
         </p>
-        <h3>Ключевые рекомендации WCAG 2.2</h3>
+        <h2>Ключевые рекомендации WCAG 2.2</h2>
         <div className="cards-wrapper">
-          <PrincipleCard
-            header="Альтернативный текст для изображений"
-            icon="glasses"
-            content={
-              'Контент должен быть доступен для восприятия разными способами (текст, аудио, альтернативные описания).'
-            }
-            linkAddress="/perceivable"
-            linkText="Пример alt текста"
-          />
-          <PrincipleCard
-            header="Адаптация мультимедиа"
-            icon="popcorn"
-            content={<ContentMultimediaCard />}
-            linkAddress="/home"
-            linkText="Практический пример"
-          />
-          <PrincipleCard
-            header="Контраст и читаемость"
-            icon="large-green-circle"
-            content={
-              'Важно соблюдать требования по минимальному соотношению контраста текста и фона: 4.5:1. Проверить контраст довольно легко - нужно воспользоваться инструментами проверки. '
-            }
-            linkAddress="/home"
-            linkText="Популярные инструменты"
-          />
+          <Card1 />
+          <Card2 />
+          <Card3 />
         </div>
         <h3>Частые ошибки</h3>
+        <div className="cards-wrapper">
+          <ComparisonCard
+            contentProblem={<ContentComparisonCard1Error />}
+            contentSolution={<ContentComparisonCard1Success />}
+          />
+          <ComparisonCard
+            contentProblem={<ContentComparisonCard2Error />}
+            contentSolution={<ContentComparisonCard2Success />}
+          />
+        </div>
 
         <h3>Полезные ссылки:</h3>
         <ul>
@@ -105,6 +71,11 @@ export const PerceivablePage = () => {
             </TextLink>
           </li>
         </ul>
+        <div className="page-navigation">
+          <ButtonLink href="/operable" type="accent">
+            {'Далее: Operable (Управляемость) ->'}
+          </ButtonLink>
+        </div>
       </div>
     </>
   );

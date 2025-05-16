@@ -32,7 +32,9 @@ export const MainFooter = () => {
           <TextLink href="https://webaim.org/">
             WebAIM - ресурс о веб-доступности
           </TextLink>
-          <TextLink href="/">Ссылка 3</TextLink>
+          <TextLink href="https://handbook.floeproject.org/">
+            Inclusive Learning Design Handbook
+          </TextLink>
           <TextLink href="/">Ссылка 4</TextLink>
         </div>
       </nav>

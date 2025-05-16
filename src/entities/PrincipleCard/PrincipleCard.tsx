@@ -10,6 +10,7 @@ interface IPrincipleCardProps {
   icon?: string;
   buttonText?: string;
   onButtonClick?: () => void;
+  buttonRef?: React.RefObject<HTMLButtonElement>;
   linkText?: string;
   linkAddress?: string;
 }
@@ -21,6 +22,7 @@ export const PrincipleCard = (props: IPrincipleCardProps) => {
     content,
     buttonText,
     onButtonClick,
+    buttonRef,
     linkText,
     linkAddress,
   } = props;
@@ -30,10 +32,10 @@ export const PrincipleCard = (props: IPrincipleCardProps) => {
         <div className="principle-card">
           <div className="principle-card-content">
             {icon && <Emoji name={icon} className="principle-card-icon" />}
-            <h4 className="principle-card-header">{header}</h4>
+            <div style={{"fontSize": "24px", "fontWeight": 700}} className="principle-card-header">{header}</div>
             <div>{content}</div>
           </div>
-          {buttonText && <Button onClick={onButtonClick}>{buttonText}</Button>}
+          {buttonText && onButtonClick && <Button onClick={onButtonClick} ref={buttonRef} >{buttonText}</Button>}
           {linkText && linkAddress && (
             <ButtonLink href={linkAddress}>{linkText}</ButtonLink>
           )}

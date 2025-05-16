@@ -1,0 +1,17 @@
+.code-block {
+  padding: 15px;
+  background-color: #050505; 
+  color: #F4F6FB;
+  border-radius: 8px;
+  display: block;
+  width: fit-content;
+  /* white-space: pre-wrap; */
+}
+
+.code-block-error {
+  text-decoration: red wavy underline;
+}
+
+.code-block-success {
+  border: 2px solid #00BB00;
+}
