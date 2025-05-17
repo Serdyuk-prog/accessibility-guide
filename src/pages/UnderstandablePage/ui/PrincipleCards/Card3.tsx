@@ -6,31 +6,20 @@ import { useRef, useState } from 'react';
 const PrincipleCardModal = () => {
   return (
     <div>
+      <ul>
+        <li>Видны ли обязательные поля до отправки формы</li>
+        <li>Конкретны ли сообщения об ошибках</li>
+        <li>Сохраняются ли введённые данные при ошибке</li>
+        <li>Есть ли подсказки для сложных полей</li>
+      </ul>
+      <br />
+      <i>Пример улучшения:</i>
       <p>
-        Среди самых популярных методов проверки уровня контраста для соблюдения
-        требований WCAG выделяются использование онлайн-инструментов, таких как
-        <br />
-        <TextLink href="https://webaim.org/resources/contrastchecker/">
-          WebAIM's Color Contrast Checker
-        </TextLink>{' '}
-        и{' '}
-        <TextLink href="https://developer.chrome.com/docs/devtools/accessibility/contrast?hl=ru">
-          Chrome DevTools
-        </TextLink>
-        ,
-        <br />
-        которые позволяют быстро оценить контрастность текста и фона. Согласно
-        WCAG, для текста нормального размера (менее 18 пунктов) минимальное
-        соотношение контраста должно составлять 4.5:1, а для крупного текста (18
-        пунктов и более) — 3:1. Также применяются расширения для браузеров,
-        например{' '}
-        <TextLink href="https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd">
-          Axe
-        </TextLink>
-        , которые автоматически анализируют веб-страницы на соответствие
-        стандартам доступности. Важно учитывать не только числовые значения
-        контрастности, но и визуальное восприятие, чтобы обеспечить удобство
-        чтения для пользователей с различными нарушениями зрения.
+        Было: <i>"Неверные данные"</i>
+      </p>
+      <p>
+        Стало:{' '}
+        <i>"Пароль должен содержать не менее 8 символов, включая цифру"</i>
       </p>
     </div>
   );
@@ -39,14 +28,11 @@ const PrincipleCardModal = () => {
 const CardContent = () => {
   return (
     <>
-      <p>
-        Чёткая структура и предсказуемая навигация помогают всем пользователям,
-        но особенно:
-      </p>
+      <p>Когда пользователи ошибаются, система должна:</p>
       <ul>
-        <li>Людям, использующим скринридеры</li>
-        <li>Пользователям с когнитивными особенностями</li>
-        <li>Тем, кто плохо знаком с вашим интерфейсом</li>
+        <li>Чётко указывать на ошибку</li>
+        <li>Объяснять, что именно не так</li>
+        <li>Предлагать конкретные способы исправления</li>
       </ul>
     </>
   );
@@ -64,16 +50,15 @@ export const Card3 = () => {
   return (
     <>
       <PrincipleCard
-        header="Логичная структура и заголовки"
-        icon="compass"
+        header="Помощь при ошибках"
+        icon="ring-buoy"
         content={<CardContent />}
-        linkAddress="/home"
-        buttonText="Популярные инструменты"
+        buttonText="Что проверять?"
         onButtonClick={toggleBlockModal}
         buttonRef={showModalRef as React.RefObject<HTMLButtonElement>}
       />
       <BlockModal
-        header="Инструменты проверки контрастности"
+        header="Что проверять?"
         content={<PrincipleCardModal />}
         buttonText="Хорошо"
         show={showBlockModal}

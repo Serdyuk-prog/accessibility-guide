@@ -48,30 +48,34 @@ export const UnderstandablePage = () => {
         <h3>Полезные ссылки:</h3>
         <ul>
           <li>
-            <TextLink href="https://www.w3.org/TR/WCAG22/#operable" isExternal>
-              Управляемость в стандарте WCAG 2.2
+            <TextLink
+              href="https://www.w3.org/TR/WCAG22/#understandable"
+              isExternal
+            >
+              Понятность в стандарте WCAG 2.2
             </TextLink>
           </li>
           <li>
-            <TextLink href="https://webaim.org/techniques/keyboard/" isExternal>
-              О клавиатурной навигации на WebAIM
+            <TextLink href="https://www.plainlanguage.gov/" isExternal>
+              Руководство по plain language от правительства США
             </TextLink>
           </li>
           <li>
             <TextLink
-              href="https://www.nngroup.com/articles/keyboard-accessibility/"
+              href="https://www.nngroup.com/articles/legibility-readability-comprehension/"
               isExternal
             >
-              Статья "Keyboard-Only Navigation for Improved Accessibility"
+              Статья "Legibility, Readability, and Comprehension: Making Users
+              Read Your Words"
             </TextLink>
           </li>
         </ul>
         <div className="page-navigation">
-          <ButtonLink href="/perceivable" type="secondary">
-            {'<- Ранее: Perceivable (Воспринимаемость)'}
+          <ButtonLink href="/operable" type="secondary">
+            {'<- Ранее: Operable (Управляемость)'}
           </ButtonLink>
-          <ButtonLink href="/understandable" type="accent">
-            {'Далее: Understandable (Понятность) ->'}
+          <ButtonLink href="/robust" type="accent">
+            {'Далее: Robustness (Надежность) ->'}
           </ButtonLink>
         </div>
       </div>
