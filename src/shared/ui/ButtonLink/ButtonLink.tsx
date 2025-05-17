@@ -15,6 +15,7 @@ export const ButtonLink = ({
   return (
     <Link
       to={href}
+      onClick={() => window.scroll({ top: 0, left: 0, behavior: 'smooth' })}
       className={`button-link button-link-${type}`}
     >
       {children}

@@ -141,7 +141,7 @@ export const HomePage = () => {
             начинается здесь
           </h2>
           <div style={{fontSize: "20px", fontWeight: 600}}>Проложи свою дрогу к интернету для всех</div>
-          <ButtonLink href="/home">Начать изучение принципов!</ButtonLink>
+          <ButtonLink href="/perceivable">Начать изучение принципов!</ButtonLink>
         </section>
       </div>
 
