@@ -1,0 +1,115 @@
+import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
+import BlockModal from '@/shared/modals/BlockModal/BlockModal';
+import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
+import { TextLink } from '@/shared/ui/TextLink/TextLink';
+import { useRef, useState } from 'react';
+
+const PrincipleCardModal = () => {
+  return (
+    <div>
+      <ol>
+        <li>
+          <b>{'Стандартные решения > Кастомные хаки'}</b>
+          <ul>
+            <li>
+              Избегайте:
+              <CodeBlock>
+                {'/* Хак для IE */'}
+                {'*zoom: 1;'}
+              </CodeBlock>
+            </li>
+            <li>
+              Используйте:
+              <CodeBlock>
+                {'/* Современный стандарт */'}
+                {'display: flow-root;'}
+              </CodeBlock>
+            </li>
+          </ul>
+          <br />
+        </li>
+        <li>
+          <b>Отказ от устаревающих технологий</b>
+          <p>Замените:</p>
+          <ul>
+            <li>
+              <b>Flash</b> {'-> HTML5 Canvas/WebGL'}
+            </li>
+            <li>
+              <b>Silverlight</b> {'-> Web Components'}
+            </li>
+            <li>
+              <b>jQuery</b> {'-> нативный JavaScript'}
+            </li>
+          </ul>
+          <br />
+        </li>
+        <li>
+          <b>Прогрессивное улучшение</b>
+          <p>Стратегия:</p>
+          <CodeBlock>
+            {'<!-- Базовая версия -->'} <br />
+            {'<form method="post">'} <br />
+            &nbsp;&nbsp;{'<input type="text" name="search">'} <br />
+            {'</form>'} <br />
+            <br />
+            {'<!-- Улучшение для современных браузеров -->'} <br />
+            {'<script>'} <br />
+            &nbsp;&nbsp;{"if ('fetch' in window) {"} <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            {"form.addEventListener('submit', async (e) => {"} <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'e.preventDefault();'} <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'// AJAX-запрос'} <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;{'});'} <br />
+            &nbsp;&nbsp;{'}'} <br />
+            {'</script>'} <br />
+          </CodeBlock>
+        </li>
+      </ol>
+    </div>
+  );
+};
+
+const CardContent = () => {
+  return (
+    <>
+      <p>Принципы будущей совместимости:</p>
+      <ul>
+        <li>Использование стандартных решений вместо кастомных хаков</li>
+        <li>Отказ от устаревающих технологий (Flash, Silverlight)</li>
+        <li>Прогрессивное улучшение вместо graceful degradation</li>
+      </ul>
+    </>
+  );
+};
+export const Card3 = () => {
+  const [showBlockModal, setShowBlockModal] = useState(false);
+  const showModalRef = useRef<HTMLButtonElement>(null);
+
+  const toggleBlockModal = () => {
+    setShowBlockModal((state) => !state);
+    if (showBlockModal) {
+      showModalRef.current?.focus();
+    }
+  };
+  return (
+    <>
+      <PrincipleCard
+        header="Устойчивость к изменениям"
+        icon="gear"
+        content={<CardContent />}
+        buttonText="Принципы будущей совместимости"
+        onButtonClick={toggleBlockModal}
+        buttonRef={showModalRef as React.RefObject<HTMLButtonElement>}
+      />
+      <BlockModal
+        header="Принципы будущей совместимости"
+        content={<PrincipleCardModal />}
+        buttonText="Хорошо"
+        show={showBlockModal}
+        onAction={toggleBlockModal}
+        onCancel={toggleBlockModal}
+      />
+    </>
+  );
+};
