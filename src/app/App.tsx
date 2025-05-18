@@ -11,9 +11,13 @@ import { RobustPage } from '@/pages/RobustPage/RobustPage';
 import { ModalPage } from '@/pages/ModalPage/ModalPage';
 
 const App = () => {
+
+  // if (window.location.pathname === '/') {
+  //   window.location.replace('/accessibility-guide/');
+  // }
   return (
     <EmojiProvider data={emojiData}>
-      <BrowserRouter>
+      <BrowserRouter basename="/accessibility-guide">
         <MainLayout>
           <Routes>
             <Route path="/" element={<HomePage />} />

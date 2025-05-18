@@ -11,7 +11,7 @@ export const MainHeader = () => {
   return (
     <header className="main-header">
       <div>
-        <a className="main-header-logo" href="/">
+        <a className="main-header-logo" href="/accessibility-guide">
           WCAG 2.2
         </a>
       </div>
@@ -61,7 +61,11 @@ export const MainHeader = () => {
           {menuActive && (
             <div className="hamburger-navigation">
               <Link to="/perceivable">Воспринимаемость</Link>
-              <Link to="/">Управляемость</Link>
+              <Link to="/operable">Управляемость</Link>
+              <Link to="/understandable">Понятность</Link>
+              <Link to="/robust">Надежность</Link>
+              <span>—</span>
+              <Link to="/modal">Практика</Link>
             </div>
           )}
         </nav>

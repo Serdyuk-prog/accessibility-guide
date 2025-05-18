@@ -9,7 +9,7 @@ export const MainFooter = () => {
         aria-label="bottom-navigation"
       >
         <div>
-          <a className="main-footer-logo" href="/">
+          <a className="main-footer-logo" href="/accessibility-guide">
             WCAG 2.2
           </a>
         </div>
