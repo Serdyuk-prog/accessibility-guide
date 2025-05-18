@@ -2,12 +2,31 @@
   background-color: rgba(9, 9, 9, 0.4);
 }
 
-.dialog-modal{
-  width: 300px;
-  padding: 20px;
+.dialog-modal {
+  width: 540px;
+  padding: 30px 40px;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid black;
+  border: none;
   border-radius: 8px;
   color: black;
+}
+
+.dialog-modal-header {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.dialog-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  .dialog-modal {
+    width: 80%;
+  }
 }

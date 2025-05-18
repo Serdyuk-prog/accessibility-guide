@@ -1,9 +1,8 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
-import BlockModal from '@/shared/modals/BlockModal/BlockModal';
-import { useState, useRef } from 'react';
-import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
+import { useRef } from 'react';
+import DialogModal from '@/shared/modals/DialogModal/DialogModal';
 
-const PrincipleCard1Modal = () => {
+const CardModal = () => {
   return (
     <div>
       <ul>
@@ -41,15 +40,7 @@ const CardContent = () => {
 };
 
 export const Card1 = () => {
-  const [showBlockModal, setShowBlockModal] = useState(false);
-  const showModalRef = useRef<HTMLButtonElement>(null);
-
-  const toggleBlockModal = () => {
-    setShowBlockModal((state) => !state);
-    if (showBlockModal) {
-      showModalRef.current?.focus();
-    }
-  };
+  const modalRef = useRef<HTMLDialogElement>(null);
 
   return (
     <>
@@ -58,16 +49,13 @@ export const Card1 = () => {
         icon="open-book"
         content={<CardContent />}
         buttonText="Что проверять?"
-        onButtonClick={toggleBlockModal}
-        buttonRef={showModalRef as React.RefObject<HTMLButtonElement>}
+        onButtonClick={() => modalRef.current?.showModal()}
       />
-      <BlockModal
+      <DialogModal
+        ref={modalRef}
         header="Что проверять?"
-        content={<PrincipleCard1Modal />}
+        content={<CardModal />}
         buttonText="Хорошо"
-        show={showBlockModal}
-        onAction={toggleBlockModal}
-        onCancel={toggleBlockModal}
       />
     </>
   );

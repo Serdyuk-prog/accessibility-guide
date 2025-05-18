@@ -1,5 +1,5 @@
 import BlockModal from '@/shared/modals/BlockModal/BlockModal';
-import DialogModal from '@/shared/modals/DialogModal/DialogModa';
+import DialogModal from '@/shared/modals/DialogModal/DialogModal';
 import { useRef, useState } from 'react';
 import './HomePage.css';
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';

@@ -1,9 +1,8 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
-import BlockModal from '@/shared/modals/BlockModal/BlockModal';
-import { TextLink } from '@/shared/ui/TextLink/TextLink';
+import DialogModal from '@/shared/modals/DialogModal/DialogModal';
 import { useRef, useState } from 'react';
 
-const PrincipleCardModal = () => {
+const CardModal = () => {
   return (
     <div>
       <ul>
@@ -38,15 +37,7 @@ const CardContent = () => {
   );
 };
 export const Card3 = () => {
-  const [showBlockModal, setShowBlockModal] = useState(false);
-  const showModalRef = useRef<HTMLButtonElement>(null);
-
-  const toggleBlockModal = () => {
-    setShowBlockModal((state) => !state);
-    if (showBlockModal) {
-      showModalRef.current?.focus();
-    }
-  };
+  const modalRef = useRef<HTMLDialogElement>(null);
   return (
     <>
       <PrincipleCard
@@ -54,16 +45,13 @@ export const Card3 = () => {
         icon="ring-buoy"
         content={<CardContent />}
         buttonText="Что проверять?"
-        onButtonClick={toggleBlockModal}
-        buttonRef={showModalRef as React.RefObject<HTMLButtonElement>}
+        onButtonClick={() => modalRef.current?.showModal()}
       />
-      <BlockModal
+      <DialogModal
+        ref={modalRef}
         header="Что проверять?"
-        content={<PrincipleCardModal />}
+        content={<CardModal />}
         buttonText="Хорошо"
-        show={showBlockModal}
-        onAction={toggleBlockModal}
-        onCancel={toggleBlockModal}
       />
     </>
   );

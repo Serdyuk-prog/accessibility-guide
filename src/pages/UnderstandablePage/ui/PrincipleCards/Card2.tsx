@@ -1,24 +1,8 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
-import BlockModal from '@/shared/modals/BlockModal/BlockModal';
-import { useState, useRef } from 'react';
+import DialogModal from '@/shared/modals/DialogModal/DialogModal';
+import { useRef } from 'react';
 
-const ContentMultimediaCard = () => {
-  return (
-    <>
-      <p>
-        Пользователи должны понимать, что произойдёт при любом действии. Это
-        включает:
-      </p>
-      <ul>
-        <li>Последовательное расположение элементов</li>
-        <li>Одинаковую реакцию на одинаковые действия</li>
-        <li>Отсутствие неожиданных изменений контекста</li>
-      </ul>
-    </>
-  );
-};
-
-const PrincipleCardModal = () => {
+const CardModal = () => {
   return (
     <div>
       <ul>
@@ -39,33 +23,38 @@ const PrincipleCardModal = () => {
   );
 };
 
-export const Card2 = () => {
-  const [showBlockModal, setShowBlockModal] = useState(false);
-  const showModalRef = useRef<HTMLButtonElement>(null);
+const CardContent = () => {
+  return (
+    <>
+      <p>
+        Пользователи должны понимать, что произойдёт при любом действии. Это
+        включает:
+      </p>
+      <ul>
+        <li>Последовательное расположение элементов</li>
+        <li>Одинаковую реакцию на одинаковые действия</li>
+        <li>Отсутствие неожиданных изменений контекста</li>
+      </ul>
+    </>
+  );
+};
 
-  const toggleBlockModal = () => {
-    setShowBlockModal((state) => !state);
-    if (showBlockModal) {
-      showModalRef.current?.focus();
-    }
-  };
+export const Card2 = () => {
+  const modalRef = useRef<HTMLDialogElement>(null);
   return (
     <>
       <PrincipleCard
         header="Предсказуемость интерфейса"
         icon="sun"
-        content={<ContentMultimediaCard />}
+        content={<CardContent />}
         buttonText="Что проверять?"
-        onButtonClick={toggleBlockModal}
-        buttonRef={showModalRef as React.RefObject<HTMLButtonElement>}
+        onButtonClick={() => modalRef.current?.showModal()}
       />
-      <BlockModal
+     <DialogModal
+        ref={modalRef}
         header="Что проверять?"
-        content={<PrincipleCardModal />}
+        content={<CardModal />}
         buttonText="Хорошо"
-        show={showBlockModal}
-        onAction={toggleBlockModal}
-        onCancel={toggleBlockModal}
       />
     </>
   );
