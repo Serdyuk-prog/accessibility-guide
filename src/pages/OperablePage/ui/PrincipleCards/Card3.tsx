@@ -1,37 +1,56 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import BlockModal from '@/shared/modals/BlockModal/BlockModal';
+import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
 import { TextLink } from '@/shared/ui/TextLink/TextLink';
 import { useRef, useState } from 'react';
 
 const PrincipleCardModal = () => {
   return (
     <div>
-      <p>
-        Среди самых популярных методов проверки уровня контраста для соблюдения
-        требований WCAG выделяются использование онлайн-инструментов, таких как
-        <br />
-        <TextLink href="https://webaim.org/resources/contrastchecker/">
-          WebAIM's Color Contrast Checker
-        </TextLink>{' '}
-        и{' '}
-        <TextLink href="https://developer.chrome.com/docs/devtools/accessibility/contrast?hl=ru">
-          Chrome DevTools
-        </TextLink>
-        ,
-        <br />
-        которые позволяют быстро оценить контрастность текста и фона. Согласно
-        WCAG, для текста нормального размера (менее 18 пунктов) минимальное
-        соотношение контраста должно составлять 4.5:1, а для крупного текста (18
-        пунктов и более) — 3:1. Также применяются расширения для браузеров,
-        например{' '}
-        <TextLink href="https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd">
-          Axe
-        </TextLink>
-        , которые автоматически анализируют веб-страницы на соответствие
-        стандартам доступности. Важно учитывать не только числовые значения
-        контрастности, но и визуальное восприятие, чтобы обеспечить удобство
-        чтения для пользователей с различными нарушениями зрения.
-      </p>
+      <ol>
+        <li>
+          <b>Логичная структура</b>
+          <CodeBlock>
+            {'<header>'} <br />
+            &nbsp;&nbsp;{'<nav aria-label="Основное">'} <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;{'<ul>'} <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {'<li><a href="/" aria-current="page">Главная</a></li>'} <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;{'</ul>'} <br />
+            &nbsp;&nbsp;{'</nav>'} <br />
+            {'</header>'} <br />
+            {'<main id="main">'} <br />
+            &nbsp;&nbsp;{'<!-- Контент -->'} <br />
+            {'</main>'} <br />
+          </CodeBlock>
+          <br />
+        </li>
+        <li>
+          <b>Помощь в навигации:</b>
+          <ul>
+            <li>"Пропустить к контенту" (первая ссылка на странице)</li>
+            <li>Хлебные крошки</li>
+            <li>Чёткие заголовки разделов (h1-h6)</li>
+          </ul>
+          <br />
+        </li>
+        <li>
+          <b>Индикация:</b>
+          <ul>
+            <li>Текущее положение в навигации (aria-current)</li>
+            <li>Видимый фокус (минимум 3:1 контраст)</li>
+            <li>Постоянное расположение ключевых элементов</li>
+          </ul>
+        </li>
+      </ol>
+      <br />
+      <b>Чек-лист:</b>
+      <ul>
+        <li>Заголовки отражают структуру (не пропускаются уровни)</li>
+        <li>На каждой странице есть h1</li>
+        <li>Ссылки имеют уникальные описательные тексты</li>
+        <li>Текущая страница выделена в меню</li>
+      </ul>
     </div>
   );
 };
@@ -68,12 +87,12 @@ export const Card3 = () => {
         icon="compass"
         content={<CardContent />}
         linkAddress="/home"
-        buttonText="Популярные инструменты"
+        buttonText="Ключевые элементы"
         onButtonClick={toggleBlockModal}
         buttonRef={showModalRef as React.RefObject<HTMLButtonElement>}
       />
       <BlockModal
-        header="Инструменты проверки контрастности"
+        header="Ключевые элементы:"
         content={<PrincipleCardModal />}
         buttonText="Хорошо"
         show={showBlockModal}

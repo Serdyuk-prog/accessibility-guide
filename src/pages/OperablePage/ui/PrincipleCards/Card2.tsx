@@ -1,12 +1,14 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import BlockModal from '@/shared/modals/BlockModal/BlockModal';
+import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
 import { useState, useRef } from 'react';
 
 const ContentMultimediaCard = () => {
   return (
     <>
       <p>
-        Интерфейс не должен ограничивать пользователей по времени там, где это не обусловлено технической необходимостью. Особенно важно для:
+        Интерфейс не должен ограничивать пользователей по времени там, где это
+        не обусловлено технической необходимостью. Особенно важно для:
       </p>
       <ul>
         <li>Людей с когнитивными нарушениями</li>
@@ -20,49 +22,57 @@ const ContentMultimediaCard = () => {
 const PrincipleCardModal = () => {
   return (
     <div>
-      <p>
-        <b>Есть ли в видео речь или другой звук,</b> необходимый для понимания
-        содержания?
-      </p>
-      <br />
-      <ul>
+      <ol>
         <li>
-          Если да,
-          <ul>
-            <li>Добавить субтитры (A)</li>
-            <li>Добавить транскрипт (AA)</li>
-            <li>Добавить перевод на язык жестов (AAA)</li>
-          </ul>
-        </li>
-        <li>
-          Если нет, <b>сообщите пользователям</b>.
-        </li>
-      </ul>
-      <br />
-      <p>
-        <b>Есть ли в видео визуальная информация</b>, необходимая для понимания
-        содержания?
-      </p>
-      <br />
-      <ul>
-        <li>
-          Если да,
+          <b>Формы:</b>
           <ul>
             <li>
-              Аудиоописание визуальной информации или описательная расшифровка
-              (A)
+              Минимум 20 минут неактивности перед автосохранением/закрытием
             </li>
-            <li>Аудиоописание визуальной информации (AA)</li>
-            <li>
-              Описательная расшифровка (AAA) (Если у вас есть описательная
-              расшифровка, вам не нужна дополнительная расшифровка только
-              аудиоинформации из предыдущего вопроса.)
-            </li>
+            <li>Возможность продлить сессию</li>
           </ul>
+          <br />
         </li>
         <li>
-          Если нет, <b>сообщите пользователям</b>.
+          <b>Анимации/карусели:</b>
+          <ul>
+            <li>Пауза/перезапуск для любого движущегося контента</li>
+            <li>Нет автоскролла без управления пользователя</li>
+          </ul>
+          <br />
         </li>
+        <li>
+          <b>Таймеры:</b>
+          <ul>
+            <li>Предупреждение за 20 секунд до окончания</li>
+            <li>Простое восстановление данных</li>
+          </ul>
+        </li>
+      </ol>
+      <br />
+      <p>Пример реализации:</p>
+      <CodeBlock>
+        {'// Таймер сессии'} <br />
+        {'let timeout;'} <br />
+        {'function resetTimer() {'} <br />
+        &nbsp;&nbsp;{'clearTimeout(timeout);'} <br />
+        &nbsp;&nbsp;{
+          'timeout = setTimeout(warnUser, 1140000); // 19 минут'
+        }{' '}
+        <br />
+        {'}'} <br />
+        <br />
+        {'function warnUser() {'} <br />
+        &nbsp;&nbsp;{'showModal("Сессия скоро завершится. Продлить?");'} <br />
+        &nbsp;&nbsp;{'// +30 секунд при подтверждении'} <br />
+        {'}'} <br />
+      </CodeBlock>
+      <br />
+      <p>Чек-лист:</p>
+      <ul>
+        <li>Нет ограничений времени, кроме технической необходимости</li>
+        <li>Возможность отключить/настроить таймеры</li>
+        <li>Данные не теряются при таймауте</li>
       </ul>
     </div>
   );
@@ -84,12 +94,12 @@ export const Card2 = () => {
         header="Отсутствие временных ограничений"
         icon="stopwatch"
         content={<ContentMultimediaCard />}
-        buttonText="Чеклист для видео"
+        buttonText="Требования"
         onButtonClick={toggleBlockModal}
         buttonRef={showModalRef as React.RefObject<HTMLButtonElement>}
       />
       <BlockModal
-        header="Чеклист доступности для предзаписанного видео"
+        header="Требования ко времени:"
         content={<PrincipleCardModal />}
         buttonText="Хорошо"
         show={showBlockModal}
