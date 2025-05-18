@@ -3,15 +3,18 @@ import { TextLink } from '@/shared/ui/TextLink/TextLink';
 import { ButtonLink } from '@/shared/ui/ButtonLink/ButtonLink';
 import useWindowSize from '@/shared/customHooks/useWindowSize';
 import { ComparisonCard } from '@/entities/ComparisonCard/ComparisonCard';
+import { Card1 } from './ui/RequirementsCards/Card1';
+import { Card2 } from './ui/RequirementsCards/Card2';
+import { Card3 } from './ui/RequirementsCards/Card3';
+import { Card4 } from './ui/RequirementsCards/Card4';
+import { ModalInfoCard } from './ui/ModalInfoCard/ModalInfoCard';
+import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
 // import {
 //   ContentComparisonCard1Error,
 //   ContentComparisonCard1Success,
 //   ContentComparisonCard2Error,
 //   ContentComparisonCard2Success,
 // } from './ui/ContentComparisonCards';
-// import { Card1 } from './ui/PrincipleCards/Card1';
-// import { Card2 } from './ui/PrincipleCards/Card2';
-// import { Card3 } from './ui/PrincipleCards/Card3';
 
 export const ModalPage = () => {
   const { width } = useWindowSize();
@@ -40,51 +43,211 @@ export const ModalPage = () => {
         </div>
         <h2>Ключевые требования WCAG 2.2</h2>
         <div className="cards-wrapper">
-          {/* <Card1 />
+          <Card1 />
           <Card2 />
-          <Card3 /> */}
-        </div>
-        <h3>Частые ошибки</h3>
-        <div className="cards-wrapper">
-          {/* <ComparisonCard
-            contentProblem={<ContentComparisonCard1Error />}
-            contentSolution={<ContentComparisonCard1Success />}
-          />
-          <ComparisonCard
-            contentProblem={<ContentComparisonCard2Error />}
-            contentSolution={<ContentComparisonCard2Success />}
-          /> */}
+          <Card3 />
+          <Card4 />
         </div>
 
-        <h3>Полезные ссылки:</h3>
+        <h3>Сравнение реализаций</h3>
+        <div className="cards-wrapper">
+          <ModalInfoCard
+            header={
+              <>
+                Кастомное решение (<code>{'<div>'}</code>)
+              </>
+            }
+          >
+            <CodeBlock>
+              {'<div class="modal" role="dialog" aria-modal="true">'} <br />
+              &nbsp;&nbsp;{'<!-- Контент -->'} <br />
+              {'</div>'}
+            </CodeBlock>
+            <br />
+            <i>Требует ручной реализации:</i>
+            <ul>
+              <li>JavaScript для управления фокусом</li>
+              <li>Обработчики клавиатуры</li>
+              <li>ARIA-атрибуты</li>
+            </ul>
+          </ModalInfoCard>
+          <ModalInfoCard
+            header={
+              <>
+                Нативное решение (<code>{'<dialog>'}</code>)
+              </>
+            }
+          >
+            <CodeBlock>
+              {'<dialog>'} <br />
+              &nbsp;&nbsp;{'<!-- Контент -->'} <br />
+              {'</dialog>'}
+            </CodeBlock>
+            <br />
+            <i>Преимущества:</i>
+            <ul>
+              <li>Встроенная ловушка фокуса</li>
+              <li>Автоматическое затемнение фона</li>
+              <li>Поддержка Esc по умолчанию</li>
+            </ul>
+          </ModalInfoCard>
+        </div>
+
+        <h3>Пошаговая инструкция</h3>
+        <div className="cards-wrapper">
+          <ModalInfoCard
+            header={
+              <>
+                Для реализации на (<code>{'<div>'}</code>)
+              </>
+            }
+          >
+            <ul>
+              <li>
+                Добавить семантические атрибуты
+                <CodeBlock>
+                  {'<div class="modal" role="dialog" aria-modal="true">'}
+                </CodeBlock>
+                <br />
+              </li>
+              <li>
+                Реализовать логику фокуса:{' '}
+                <CodeBlock>
+                  {'// При открытии'} <br />
+                  {'modalRef.current?.focus();'} <br />
+                  <br />
+                  <br />
+                  {'// При закрытии'} <br />
+                  {'showModalRef.current?.focus();'}
+                </CodeBlock>
+                <br />
+              </li>
+              <li>
+                Добавить обработчик Esc
+                <CodeBlock>
+                  {"if (event.key === 'Escape') {"} <br />
+                  &nbsp;&nbsp;{'// Закрываем модалку'}
+                  {'}'}
+                </CodeBlock>
+                <br />
+              </li>
+              <li>
+                <div>Реализовать ловушку фокуса</div>
+                <br />
+              </li>
+              <li>
+                Реализовать блокировку скролла страницы
+                <CodeBlock>
+                  {"document.body.style.overflow = 'hidden';"}
+                </CodeBlock>
+                <br />
+              </li>
+              <li>
+                Стилизовать оверлей
+                <CodeBlock>
+                  {'position: fixed;'} <br />
+                  {'top: 0;'} <br />
+                  {'left: 0;'} <br />
+                  {'width: 100vw;'} <br />
+                  {'height: 100vh;'} <br />
+                  {'background-color: rgba(9, 9, 9, 0.4);'} <br />
+                  {'z-index: 999;'}
+                </CodeBlock>
+              </li>
+            </ul>
+          </ModalInfoCard>
+
+          <ModalInfoCard
+            header={
+              <>
+                Нативное решение (<code>{'<dialog>'}</code>)
+              </>
+            }
+          >
+            <ul>
+              <li>
+                Использовать базовый HTML-тег
+                <CodeBlock>
+                  {'<dialog>'} <br />
+                  &nbsp;&nbsp;{'<!-- Контент -->'} <br />
+                  {'</dialog>'}
+                </CodeBlock>
+                <br />
+              </li>
+              <li>
+                Стилизация через ::backdrop
+                <CodeBlock>
+                  {'dialog::backdrop {'} <br />
+                  &nbsp;&nbsp;{'background-color: rgba(9, 9, 9, 0.4);'} <br />
+                  {'}'}
+                </CodeBlock>
+                <br />
+              </li>
+              <li>
+                Добавить закрытие модалки по клику на оверлей
+                <br />
+              </li>
+            </ul>
+          </ModalInfoCard>
+        </div>
+
+        <h3>Рекомендации</h3>
+        <div className="cards-wrapper">
+          <ModalInfoCard header="Для большинства проектов:">
+            <b>
+              Используете <code>{'<dialog>'}</code>
+            </b>
+            <ul>
+              <li>Экономит время разработки</li>
+              <li>Гарантирует базовую доступность</li>
+              <li>Упрощает поддержку</li>
+            </ul>
+          </ModalInfoCard>
+
+          <ModalInfoCard header="Для сложных случаев:">
+            <b>Комбинируйте подходы</b>
+            <CodeBlock>
+              {'<dialog ref={dialogRef}>'} <br />
+              &nbsp;&nbsp;{'<div className="custom-modal-content">'} <br />
+              &nbsp;&nbsp; &nbsp;&nbsp;{'{/* Кастомная логика */}'} <br />
+              &nbsp;&nbsp;{'</div>'} <br />
+              {'</dialog>'} <br />
+            </CodeBlock>
+          </ModalInfoCard>
+        </div>
+
+        <h3>Дополнительные ресурсы:</h3>
         <ul>
           <li>
-            <TextLink href="https://www.w3.org/TR/WCAG22/#operable" isExternal>
-              Управляемость в стандарте WCAG 2.2
+            <TextLink
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog"
+              isExternal
+            >
+              {'<dialog> на MDN'}
             </TextLink>
           </li>
           <li>
-            <TextLink href="https://webaim.org/techniques/keyboard/" isExternal>
-              О клавиатурной навигации на WebAIM
+            <TextLink href="https://doka.guide/html/dialog/" isExternal>
+              Статья про dialog в Доке
             </TextLink>
           </li>
           <li>
             <TextLink
-              href="https://www.nngroup.com/articles/keyboard-accessibility/"
+              href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/"
               isExternal
             >
-              Статья "Keyboard-Only Navigation for Improved Accessibility"
+              Пример реализации доступного модального окна от W3C
             </TextLink>
           </li>
         </ul>
-        <div className="page-navigation">
-          <ButtonLink href="/perceivable" type="secondary">
-            {'<- Ранее: Perceivable (Воспринимаемость)'}
+        <section className="call-to-action">
+          <div style={{ fontSize: '24px', fontWeight: 600 }}>
+            Проложи свою дрогу к интернету для всех!
+          </div>
+          <ButtonLink href="/perceivable">
+            Перейти изучение принципов!
           </ButtonLink>
-          <ButtonLink href="/understandable" type="accent">
-            {'Далее: Understandable (Понятность) ->'}
-          </ButtonLink>
-        </div>
+        </section>
       </div>
     </>
   );

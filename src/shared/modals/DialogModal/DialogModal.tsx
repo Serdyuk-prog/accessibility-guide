@@ -50,18 +50,19 @@ const DialogModal = (props: IDialogModalProps) => {
   }, [ref]);
 
   return createPortal(
-    <dialog ref={ref} className="dialog-modal" aria-labelledby="heading">
-      <span className="block-modal-header">{header}</span>
+    <dialog ref={ref} className="dialog-modal" aria-labelledby="header">
+      <span className="dialog-modal-header" id="header">{header}</span>
       {content}
-      <div className="block-modal-actions">
-        {buttonText && (
-          <Button onClick={handleAction}>{buttonText}</Button>
-        )}
+      <div className="dialog-modal-actions">
+        {buttonText && <Button onClick={handleAction}>{buttonText}</Button>}
         {cancelButtonText && (
           <Button type="secondary" onClick={handleCancel}>
             {cancelButtonText}
           </Button>
         )}
+        <button type="button" aria-label='Закрыть' className="dialog-modal-close" onClick={handleCancel}>
+          <span>✕</span>
+        </button>
       </div>
     </dialog>,
     document.body

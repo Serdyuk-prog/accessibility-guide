@@ -25,6 +25,25 @@
   margin-top: 20px;
 }
 
+.dialog-modal-close {
+  position: absolute;
+  top: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: black;
+
+  .visually-hidden{
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+.dialog-modal-close:hover{
+  color: #616161;
+}
+
 @media screen and (max-width: 650px) {
   .dialog-modal {
     width: 80%;

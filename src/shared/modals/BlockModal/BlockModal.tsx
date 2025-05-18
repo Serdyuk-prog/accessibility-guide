@@ -74,14 +74,20 @@ const BlockModal = ({
 
   if (!show) return null;
   return createPortal(
-    <div className="block-modal-overlay" onClick={handleOverlayClick}>
+    <div
+      className="block-modal-overlay"
+      onClick={handleOverlayClick}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="block-modal-header"
+    >
       <div
         ref={modalRef}
         className="block-modal"
         onClick={(e) => e.stopPropagation()}
         tabIndex={-1}
       >
-        <span className="block-modal-header">{header}</span>
+        <span className="block-modal-header" id="block-modal-header">{header}</span>
         {content}
         <div className="block-modal-actions">
           {onAction && buttonText && (
@@ -93,6 +99,9 @@ const BlockModal = ({
             </Button>
           )}
         </div>
+        <button type="button" aria-label='Закрыть' className="block-modal-close" onClick={onCancel}>
+          <span>✕</span>
+        </button>
       </div>
     </div>,
     document.body
