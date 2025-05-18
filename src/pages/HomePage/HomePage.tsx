@@ -45,8 +45,6 @@ export const HomePage = () => {
             content={
               'Контент должен быть доступен для восприятия разными способами (текст, аудио, альтернативные описания).'
             }
-            linkAddress="/perceivable"
-            linkText="Подробнее"
           />
           <PrincipleCard
             header="Управляемость"
@@ -54,15 +52,11 @@ export const HomePage = () => {
             content={
               'Интерфейс должен работать с клавиатурой, не требовать быстрой реакции и быть предсказуемым.'
             }
-            linkAddress="/operable"
-            linkText="Подробнее"
           />
           <PrincipleCard
             header="Понятность"
             icon="brain"
             content={'Информация и навигация должны быть интуитивно понятными.'}
-            linkAddress="/understandable"
-            linkText="Подробнее"
           />
           <PrincipleCard
             header="Надёжность"
@@ -70,8 +64,6 @@ export const HomePage = () => {
             content={
               'Сайт должен корректно работать с различными технологиями, включая скринридеры.'
             }
-            linkAddress="/robust"
-            linkText="Подробнее"
           />
         </div>
 

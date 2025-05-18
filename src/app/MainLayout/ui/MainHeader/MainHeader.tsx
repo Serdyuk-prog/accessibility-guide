@@ -15,7 +15,7 @@ export const MainHeader = () => {
           WCAG 2.2
         </a>
       </div>
-      {width > 1024 && (
+      {width > 1150 && (
         <nav
           className="main-header-links"
           role="navigation"
@@ -26,11 +26,11 @@ export const MainHeader = () => {
           <Link to="/understandable">Понятность</Link>
           <Link to="/robust">Надежность</Link>
           <span>|</span>
-          <Link to="/modal">Практика</Link>
+          <Link to="/modal">Модальные окна</Link>
         </nav>
       )}
 
-      {width <= 1024 && (
+      {width <= 1150 && (
         <nav
           role="navigation"
           aria-label="Главное меню"
@@ -65,7 +65,7 @@ export const MainHeader = () => {
               <Link to="/understandable">Понятность</Link>
               <Link to="/robust">Надежность</Link>
               <span>—</span>
-              <Link to="/modal">Практика</Link>
+              <Link to="/modal">Модальные окна</Link>
             </div>
           )}
         </nav>

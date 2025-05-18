@@ -19,20 +19,20 @@ export const MainFooter = () => {
           <TextLink href="/operable">Управляемость</TextLink>
           <TextLink href="/understandable">Понятность</TextLink>
           <TextLink href="/robust">Надежность</TextLink>
-          <TextLink href="/modal">Практика</TextLink>
+          <TextLink href="/modal">Модальные окна</TextLink>
         </div>
         <div className="main-footer-links">
           <span>Полезные ссылки</span>
-          <TextLink href="https://www.w3.org/TR/WCAG22">
+          <TextLink isExternal href="https://www.w3.org/TR/WCAG22">
             Полный текст WCAG 2.2
           </TextLink>
-          <TextLink href="https://webaim.org/">
+          <TextLink isExternal href="https://webaim.org/">
             WebAIM - ресурс о веб-доступности
           </TextLink>
-          <TextLink href="https://handbook.floeproject.org/">
+          <TextLink isExternal href="https://handbook.floeproject.org/">
             Inclusive Learning Design Handbook
           </TextLink>
-          <TextLink href="https://developer.mozilla.org/ru/docs/Web/HTML/Reference/Elements/dialog">
+          <TextLink isExternal href="https://developer.mozilla.org/ru/docs/Web/HTML/Reference/Elements/dialog">
             HTML-элемент {'<dialog>'}
           </TextLink>
         </div>
