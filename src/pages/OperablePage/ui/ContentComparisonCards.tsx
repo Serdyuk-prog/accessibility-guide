@@ -12,7 +12,7 @@ export const ContentComparisonCard1Error = () => {
       <img
         src={demoGif}
         alt="Анимация перемещения фокуса по замкнутой области сайта"
-        style={{ width: '400px' }}
+        style={{ width: '400px', maxWidth: '100%' }}
       />
     </>
   );

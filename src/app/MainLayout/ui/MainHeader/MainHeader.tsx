@@ -18,7 +18,10 @@ export const MainHeader = () => {
       <Link
         to={to}
         className={`${isActive ? 'main-header-link-active' : ''}`}
-        onClick={() => window.scroll({ top: 0, left: 0, behavior: 'smooth' })}
+        onClick={() => {
+          window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+          setMenuActive(false);
+        }}
       >
         {children}
       </Link>
