@@ -104,16 +104,16 @@ export const HomePage = () => {
               <TextLink href="/perceivable">Воспринимаемость</TextLink>
             </li>
             <li>
-              <TextLink href="/">Управляемость</TextLink>
+              <TextLink href="/operable">Управляемость</TextLink>
             </li>
             <li>
-              <TextLink href="/">Понятность</TextLink>
+              <TextLink href="/understandable">Понятность</TextLink>
             </li>
             <li>
-              <TextLink href="/">Надежность</TextLink>
+              <TextLink href="/robust">Надежность</TextLink>
             </li>
             <li>
-              <TextLink href="/">Модальные окна</TextLink>
+              <TextLink href="/modal">Модальные окна</TextLink>
             </li>
           </ul>
           <p>

@@ -16,7 +16,7 @@ export const TextLink = ({ children, href, isExternal }: ITextLinkProps) => {
     );
   }
   return (
-    <Link to={href} className="text-link">
+    <Link to={href} className="text-link" onClick={() => window.scroll({ top: 0, left: 0, behavior: 'smooth' })}>
       {children}
     </Link>
   );

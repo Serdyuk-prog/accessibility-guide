@@ -19,9 +19,16 @@
 }
 
 .main-header-logo {
-  color: #3767CB;
-  font-size: 24px;
-  font-weight: 700;
+  a {
+    color: #3767CB;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .main-header-link-active {
+    text-decoration: underline;
+  }
 }
 
 .main-header-links {
@@ -37,6 +44,10 @@
 
   a:hover {
     color: #3767CB;
+  }
+
+  .main-header-link-active {
+    text-decoration: underline;
   }
 }
 
@@ -83,7 +94,13 @@
   a:hover {
     color: #3767CB;
   }
+
+  .main-header-link-active {
+    text-decoration: underline;
+  }
 }
+
+
 
 @media (max-width: 1024px) {
   .main-header {

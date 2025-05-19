@@ -3,17 +3,32 @@ import './MainHeaderStyles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import useWindowSize from '@/shared/customHooks/useWindowSize';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 export const MainHeader = () => {
   const [menuActive, setMenuActive] = useState(false);
   const hamburgerButtonRef = useRef<HTMLButtonElement>(null);
   const { width } = useWindowSize();
+
+  const location = useLocation();
+  const currentRoute = location.pathname;
+
+  const HeaderLink = ({ to, children }: { to: string; children: string }) => {
+    const isActive = currentRoute === to;
+    return (
+      <Link
+        to={to}
+        className={`${isActive ? 'main-header-link-active' : ''}`}
+        onClick={() => window.scroll({ top: 0, left: 0, behavior: 'smooth' })}
+      >
+        {children}
+      </Link>
+    );
+  };
+
   return (
     <header className="main-header">
-      <div>
-        <a className="main-header-logo" href="/accessibility-guide">
-          WCAG 2.2
-        </a>
+      <div className="main-header-logo">
+        <HeaderLink to="/">WCAG 2.2</HeaderLink>
       </div>
       {width > 1150 && (
         <nav
@@ -21,12 +36,14 @@ export const MainHeader = () => {
           role="navigation"
           aria-label="Главное меню"
         >
-          <Link to="/perceivable">Воспринимаемость</Link>
-          <Link to="/operable">Управляемость</Link>
-          <Link to="/understandable">Понятность</Link>
-          <Link to="/robust">Надежность</Link>
+          <HeaderLink to="/perceivable" isActive={true}>
+            Воспринимаемость
+          </HeaderLink>
+          <HeaderLink to="/operable">Управляемость</HeaderLink>
+          <HeaderLink to="/understandable">Понятность</HeaderLink>
+          <HeaderLink to="/robust">Надежность</HeaderLink>
           <span>|</span>
-          <Link to="/modal">Модальные окна</Link>
+          <HeaderLink to="/modal">Модальные окна</HeaderLink>
         </nav>
       )}
 
@@ -60,12 +77,12 @@ export const MainHeader = () => {
           </button>
           {menuActive && (
             <div className="hamburger-navigation">
-              <Link to="/perceivable">Воспринимаемость</Link>
-              <Link to="/operable">Управляемость</Link>
-              <Link to="/understandable">Понятность</Link>
-              <Link to="/robust">Надежность</Link>
+              <HeaderLink to="/perceivable">Воспринимаемость</HeaderLink>
+              <HeaderLink to="/operable">Управляемость</HeaderLink>
+              <HeaderLink to="/understandable">Понятность</HeaderLink>
+              <HeaderLink to="/robust">Надежность</HeaderLink>
               <span>—</span>
-              <Link to="/modal">Модальные окна</Link>
+              <HeaderLink to="/modal">Модальные окна</HeaderLink>
             </div>
           )}
         </nav>
