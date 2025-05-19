@@ -74,12 +74,12 @@ export const OperablePage = () => {
           </li>
         </ul>
         <div className="page-navigation">
-          <ButtonLink href="/perceivable" type="secondary">
+          <TextLink href="/perceivable" type="secondary">
             {'<- Ранее: Perceivable (Воспринимаемость)'}
-          </ButtonLink>
-          <ButtonLink href="/understandable" type="accent">
+          </TextLink>
+          <TextLink href="/understandable" type="accent">
             {'Далее: Understandable (Понятность) ->'}
-          </ButtonLink>
+          </TextLink>
         </div>
       </div>
     </>

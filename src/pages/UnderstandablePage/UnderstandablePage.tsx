@@ -71,12 +71,12 @@ export const UnderstandablePage = () => {
           </li>
         </ul>
         <div className="page-navigation">
-          <ButtonLink href="/operable" type="secondary">
+          <TextLink href="/operable" type="secondary">
             {'<- Ранее: Operable (Управляемость)'}
-          </ButtonLink>
-          <ButtonLink href="/robust" type="accent">
+          </TextLink>
+          <TextLink href="/robust" type="accent">
             {'Далее: Robustness (Надежность) ->'}
-          </ButtonLink>
+          </TextLink>
         </div>
       </div>
     </>

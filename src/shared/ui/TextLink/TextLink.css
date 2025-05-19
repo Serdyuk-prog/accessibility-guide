@@ -2,8 +2,27 @@
   color: #0B0F19;
   text-decoration: none;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .text-link:hover {
   color: #3767CB;
+}
+
+.text-link-secondary {
+  /* text-decoration: 2px underline; */
+}
+
+.text-link-secondary:hover {
+  color: #0B0F19;
+  text-decoration: #EE8EAC 3px underline;
+}
+
+.text-link-accent {
+  /* text-decoration: 2px underline; */
+}
+
+.text-link-accent:hover {
+  color: #0B0F19;
+  text-decoration: #E67E58 3px underline;
 }

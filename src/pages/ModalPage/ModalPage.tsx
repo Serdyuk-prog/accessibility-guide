@@ -240,13 +240,10 @@ export const ModalPage = () => {
             </TextLink>
           </li>
         </ul>
-        <section className="call-to-action">
-          <div style={{ fontSize: '24px', fontWeight: 600 }}>
-            Проложи свою дрогу к интернету для всех!
-          </div>
-          <ButtonLink href="/perceivable">
-            Перейти изучение принципов!
-          </ButtonLink>
+        <section className="page-navigation">
+          <TextLink href="/perceivable" type="secondary">
+            {'<- Назад к принципам: Perceivable (Воспринимаемость)'}
+          </TextLink>
         </section>
       </div>
     </>

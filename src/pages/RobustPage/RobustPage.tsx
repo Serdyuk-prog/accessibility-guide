@@ -69,12 +69,12 @@ export const RobustPage = () => {
           </li>
         </ul>
         <div className="page-navigation">
-          <ButtonLink href="/understandable" type="secondary">
+          <TextLink href="/understandable" type="secondary">
             {'<- Ранее: Understandable (Понятность)'}
-          </ButtonLink>
-          <ButtonLink href="/modal" type="accent">
+          </TextLink>
+          <TextLink href="/modal" type="accent">
             {'Далее: Доступность модальных окон ->'}
-          </ButtonLink>
+          </TextLink>
         </div>
       </div>
     </>
