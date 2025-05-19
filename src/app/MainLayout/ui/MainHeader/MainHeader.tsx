@@ -39,7 +39,7 @@ export const MainHeader = () => {
           role="navigation"
           aria-label="Главное меню"
         >
-          <HeaderLink to="/perceivable" isActive={true}>
+          <HeaderLink to="/perceivable">
             Воспринимаемость
           </HeaderLink>
           <HeaderLink to="/operable">Управляемость</HeaderLink>
