@@ -1,6 +1,7 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
 import { useRef } from 'react';
+import { BsTag } from 'react-icons/bs';
 const CardContent = () => {
   return (
     <>
@@ -28,6 +29,7 @@ export const Card2 = () => {
       <PrincipleCard
         header="Семантика и ARIA"
         icon="label"
+        iconElement={<BsTag size={50} color="#EE8EAC" />}
         content={<CardContent />}
       />
     </>

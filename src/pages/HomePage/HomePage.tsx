@@ -29,7 +29,9 @@ export const HomePage = () => {
     <>
       {/* <Emoji name="check-mark-button" /> */}
       <div className="home-page-wrapper">
-        <h1> Веб-доступность: цифровая инклюзивность для всех</h1>
+        <div><h1> Веб-доступность:</h1>
+        <h2>цифровая инклюзивность для всех</h2></div>
+        
         <p className={width > 720 ? 'subheading' : ''}>
           Веб-доступность — это практика создания сайтов и приложений, которыми
           могут пользоваться люди с любыми возможностями. Она обеспечивает
@@ -37,7 +39,7 @@ export const HomePage = () => {
           когнитивных особенностей. В этом руководстве вы узнаете, как сделать
           цифровые продукты доступными, следуя стандартам WCAG.
         </p>
-        <h2>Основные принципы веб-доступности</h2>
+        <h3>Основные принципы веб-доступности</h3>
         {/* <button ref={showModalRef} onClick={(e) => toggleBlockModal(e)}>Show BlockModal</button>
         <button onClick={() => modalRef.current?.showModal()}>
           Show DialogModal
@@ -77,7 +79,7 @@ export const HomePage = () => {
           />
         </div>
 
-        <h2>Почему доступность важна?</h2>
+        <h3>Почему доступность важна?</h3>
         <div className="cards-wrapper">
           <PrincipleCard
             icon="bar-chart"
@@ -105,7 +107,7 @@ export const HomePage = () => {
           />
         </div>
 
-        <h2>Структура сайта</h2>
+        <h3>Структура сайта</h3>
         <section>
           <p>
             Сайт разделён на пять основных разделов: введение (эта страница),

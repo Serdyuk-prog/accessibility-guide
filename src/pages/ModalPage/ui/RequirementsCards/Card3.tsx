@@ -1,5 +1,6 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import { useRef } from 'react';
+import { MdDarkMode } from 'react-icons/md';
 const CardContent = () => {
   return (
     <>
@@ -17,6 +18,7 @@ export const Card3 = () => {
       <PrincipleCard
         header="Затемнение фона"
         icon="new-moon"
+        iconElement={<MdDarkMode size={50} color="#3767CB" />}
         content={<CardContent />}
       />
     </>

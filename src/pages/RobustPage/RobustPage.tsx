@@ -19,7 +19,11 @@ export const RobustPage = () => {
   return (
     <>
       <div className="robust-page-wrapper">
-        <h1>Надёжность: совместимость с технологиями настоящего и будущего</h1>
+        <div>
+          <h1>Надёжность:</h1>
+          <h2>совместимость с технологиями</h2>
+        </div>
+
         <p className={width > 720 ? 'subheading' : ''}>
           Принцип надёжности гарантирует, что ваш контент останется доступным
           при использовании различных технологий — современных браузеров,
@@ -47,10 +51,7 @@ export const RobustPage = () => {
         <h3>Полезные ссылки:</h3>
         <ul>
           <li>
-            <TextLink
-              href="https://www.w3.org/TR/WCAG22/#robust"
-              isExternal
-            >
+            <TextLink href="https://www.w3.org/TR/WCAG22/#robust" isExternal>
               Надёжность в стандарте WCAG 2.2
             </TextLink>
           </li>
@@ -60,10 +61,7 @@ export const RobustPage = () => {
             </TextLink>
           </li>
           <li>
-            <TextLink
-              href="https://validator.w3.org/"
-              isExternal
-            >
+            <TextLink href="https://validator.w3.org/" isExternal>
               HTML-валидатор
             </TextLink>
           </li>

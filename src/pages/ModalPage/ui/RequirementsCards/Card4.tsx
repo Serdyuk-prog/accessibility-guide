@@ -1,5 +1,6 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import { useRef } from 'react';
+import { IoCloseCircle } from 'react-icons/io5';
 const CardContent = () => {
   return (
     <>
@@ -17,6 +18,7 @@ export const Card4 = () => {
       <PrincipleCard
         header="Закрытие модального окна"
         icon="see-no-evil-monkey"
+        iconElement={<IoCloseCircle size={50} color="#E67E58" />}
         content={<CardContent />}
       />
     </>

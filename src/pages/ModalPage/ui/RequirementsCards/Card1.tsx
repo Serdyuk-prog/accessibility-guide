@@ -1,5 +1,6 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import { useRef } from 'react';
+import { GiArcheryTarget } from 'react-icons/gi';
 const CardContent = () => {
   return (
     <>
@@ -17,6 +18,7 @@ export const Card1 = () => {
       <PrincipleCard
         header="Управление фокусом"
         icon="direct-hit"
+        iconElement={<GiArcheryTarget size={50} color="#E67E58" />}
         content={<CardContent />}
       />
     </>

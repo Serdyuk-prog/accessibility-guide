@@ -19,7 +19,11 @@ export const OperablePage = () => {
   return (
     <>
       <div className="operable-page-wrapper">
-        <h1>Управляемость: интерфейсы для всех способов взаимодействия</h1>
+        <div>
+          <h1>Управляемость:</h1>
+          <h2>интерфейсы для всех способов взаимодействия</h2>
+        </div>
+
         <p className={width > 720 ? 'subheading' : ''}>
           Принцип управляемости гарантирует, что пользователи могут
           взаимодействовать с интерфейсом различными способами - не только
@@ -28,7 +32,7 @@ export const OperablePage = () => {
           создать интерфейс, который будет удобен людям с разными физическими
           возможностями и предпочтениями в навигации.
         </p>
-        <h2>Ключевые рекомендации WCAG 2.2</h2>
+        <h3>Ключевые рекомендации WCAG 2.2</h3>
         <div className="cards-wrapper">
           <Card1 />
           <Card2 />
@@ -49,19 +53,13 @@ export const OperablePage = () => {
         <h3>Полезные ссылки:</h3>
         <ul>
           <li>
-            <TextLink
-              href="https://www.w3.org/TR/WCAG22/#operable"
-              isExternal
-            >
+            <TextLink href="https://www.w3.org/TR/WCAG22/#operable" isExternal>
               Управляемость в стандарте WCAG 2.2
             </TextLink>
           </li>
           <li>
-            <TextLink
-              href="https://webaim.org/techniques/keyboard/"
-              isExternal
-            >
-              О клавиатурной навигации на WebAIM 
+            <TextLink href="https://webaim.org/techniques/keyboard/" isExternal>
+              О клавиатурной навигации на WebAIM
             </TextLink>
           </li>
           <li>
