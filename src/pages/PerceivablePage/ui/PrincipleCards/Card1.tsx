@@ -3,6 +3,7 @@ import BlockModal from '@/shared/modals/BlockModal/BlockModal';
 import { useState, useRef } from 'react';
 import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
 import exampleImage from '../../assets/image10.png';
+import { BsEyeglasses } from 'react-icons/bs';
 
 const PrincipleCard1Modal = () => {
   return (
@@ -46,6 +47,7 @@ export const Card1 = () => {
       <PrincipleCard
         header="Альтернативный текст для изображений"
         icon="glasses"
+        iconElement={<BsEyeglasses size={50} color="#3767CB" />} //E67E58 EE8EAC
         content={
           'Контент должен быть доступен для восприятия разными способами (текст, аудио, альтернативные описания).'
         }

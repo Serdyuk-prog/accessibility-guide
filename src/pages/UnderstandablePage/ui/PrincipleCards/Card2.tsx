@@ -1,6 +1,7 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import DialogModal from '@/shared/modals/DialogModal/DialogModal';
 import { useRef } from 'react';
+import { MdOutlineWbSunny } from 'react-icons/md';
 
 const CardModal = () => {
   return (
@@ -46,6 +47,7 @@ export const Card2 = () => {
       <PrincipleCard
         header="Предсказуемость интерфейса"
         icon="sun"
+        iconElement={<MdOutlineWbSunny size={50} color="#E67E58" />}
         content={<CardContent />}
         buttonText="Что проверять?"
         onButtonClick={() => modalRef.current?.showModal()}

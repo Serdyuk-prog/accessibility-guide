@@ -6,6 +6,10 @@ import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import { TextLink } from '@/shared/ui/TextLink/TextLink';
 import { ButtonLink } from '@/shared/ui/ButtonLink/ButtonLink';
 import useWindowSize from '@/shared/customHooks/useWindowSize';
+import { FaBrain, FaBriefcase, FaChartBar, FaHandPaper, FaRegEye } from 'react-icons/fa';
+import { FaGear, FaHand } from 'react-icons/fa6';
+import { IoMdHand } from 'react-icons/io';
+import { MdOutlineWbSunny } from 'react-icons/md';
 
 export const HomePage = () => {
   const [showBlockModal, setShowBlockModal] = useState(false);
@@ -26,7 +30,7 @@ export const HomePage = () => {
       {/* <Emoji name="check-mark-button" /> */}
       <div className="home-page-wrapper">
         <h1> Веб-доступность: цифровая инклюзивность для всех</h1>
-        <p className={width > 720 ? "subheading" : ""}>
+        <p className={width > 720 ? 'subheading' : ''}>
           Веб-доступность — это практика создания сайтов и приложений, которыми
           могут пользоваться люди с любыми возможностями. Она обеспечивает
           равный доступ к информации и сервисам, независимо от физических или
@@ -42,6 +46,7 @@ export const HomePage = () => {
           <PrincipleCard
             header="Воспринимаемость"
             icon="eye"
+            iconElement={<FaRegEye size={50} color="#E67E58" />}
             content={
               'Контент должен быть доступен для восприятия разными способами (текст, аудио, альтернативные описания).'
             }
@@ -49,6 +54,7 @@ export const HomePage = () => {
           <PrincipleCard
             header="Управляемость"
             icon="hand-with-fingers-splayed"
+            iconElement={<IoMdHand size={50} color="#3767CB" />}
             content={
               'Интерфейс должен работать с клавиатурой, не требовать быстрой реакции и быть предсказуемым.'
             }
@@ -56,11 +62,15 @@ export const HomePage = () => {
           <PrincipleCard
             header="Понятность"
             icon="brain"
-            content={'Информация и навигация должны быть интуитивно понятными.'}
+            iconElement={<FaBrain size={50} color="#EE8EAC" />}
+            content={
+              'Информация и навигация должны быть интуитивно понятными даже для людей с когнитивными нарушениями'
+            }
           />
           <PrincipleCard
             header="Надёжность"
             icon="gear"
+            iconElement={<FaGear size={50} color="#E67E58" />}
             content={
               'Сайт должен корректно работать с различными технологиями, включая скринридеры.'
             }
@@ -71,6 +81,7 @@ export const HomePage = () => {
         <div className="cards-wrapper">
           <PrincipleCard
             icon="bar-chart"
+            iconElement={<FaChartBar size={50} color="#EE8EAC" />}
             header="Статистика доступности"
             content={
               'Согласно исследованиям WebAIM, 98% сайтов не соответствуют базовым требованиям доступности WCAG 2.1 уровня AA.'
@@ -79,12 +90,14 @@ export const HomePage = () => {
           <PrincipleCard
             icon="sun"
             header="Забота о пользователе"
+            iconElement={<MdOutlineWbSunny size={50} color="#E67E58" />}
             content={
               'Представьте, как сложно пользователю с нарушением зрения ориентироваться на сайте, где изображения не имеют текстовых описаний, или как трудно человеку с тремором рук нажать маленькую кнопку.'
             }
           />
           <PrincipleCard
             icon="briefcase"
+            iconElement={<FaBriefcase size={50} color="#3767CB" />}
             header="Преимущества для бизнеса"
             content={
               'Сайты при создании которых учитывается доступность лучше ранжируются в поисковых системах и соответствуют стандартам для использования в гос-секторе.'
@@ -127,13 +140,15 @@ export const HomePage = () => {
         <section className="call-to-action">
           <h2>
             Путь
-            <span className="color-effect">
-              Веб-доступности
-            </span>
+            <span className="color-effect">Веб-доступности</span>
             начинается здесь
           </h2>
-          <div style={{fontSize: "20px", fontWeight: 600}}>Проложи свою дрогу к интернету для всех</div>
-          <ButtonLink href="/perceivable">Начать изучение принципов!</ButtonLink>
+          <div style={{ fontSize: '20px', fontWeight: 600 }}>
+            Проложи свою дрогу к интернету для всех
+          </div>
+          <ButtonLink href="/perceivable">
+            Начать изучение принципов!
+          </ButtonLink>
         </section>
       </div>
 

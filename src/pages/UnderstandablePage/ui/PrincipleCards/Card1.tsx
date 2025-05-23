@@ -1,6 +1,7 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import { useRef } from 'react';
 import DialogModal from '@/shared/modals/DialogModal/DialogModal';
+import { PiBookOpenText } from 'react-icons/pi';
 
 const CardModal = () => {
   return (
@@ -47,6 +48,7 @@ export const Card1 = () => {
       <PrincipleCard
         header="Читаемость контента"
         icon="open-book"
+        iconElement={<PiBookOpenText size={50} color="#3767CB" />} 
         content={<CardContent />}
         buttonText="Что проверять?"
         onButtonClick={() => modalRef.current?.showModal()}

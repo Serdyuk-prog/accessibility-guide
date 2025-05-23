@@ -3,6 +3,7 @@ import BlockModal from '@/shared/modals/BlockModal/BlockModal';
 import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
 import { TextLink } from '@/shared/ui/TextLink/TextLink';
 import { useRef, useState } from 'react';
+import { FaCompass } from 'react-icons/fa6';
 
 const PrincipleCardModal = () => {
   return (
@@ -85,6 +86,7 @@ export const Card3 = () => {
       <PrincipleCard
         header="Логичная структура и заголовки"
         icon="compass"
+        iconElement={<FaCompass size={50} color="#EE8EAC" />}
         content={<CardContent />}
         linkAddress="/home"
         buttonText="Ключевые элементы"

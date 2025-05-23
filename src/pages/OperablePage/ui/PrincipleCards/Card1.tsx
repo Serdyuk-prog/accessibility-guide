@@ -2,6 +2,7 @@ import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import BlockModal from '@/shared/modals/BlockModal/BlockModal';
 import { useState, useRef } from 'react';
 import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
+import { FaKeyboard } from 'react-icons/fa';
 
 const PrincipleCard1Modal = () => {
   return (
@@ -88,6 +89,7 @@ export const Card1 = () => {
       <PrincipleCard
         header="Клавиатурная навигация"
         icon="keyboard"
+        iconElement={<FaKeyboard size={50} color="#3767CB" />}
         content={<CardContent />}
         buttonText="Как реализовать правильно?"
         onButtonClick={toggleBlockModal}

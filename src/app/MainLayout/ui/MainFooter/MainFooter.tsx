@@ -10,7 +10,7 @@ export const MainFooter = () => {
       >
         <div>
           <a className="main-footer-logo" href="/accessibility-guide">
-            WCAG 2.2
+            OpenWCAG
           </a>
         </div>
         <div className="main-footer-links">

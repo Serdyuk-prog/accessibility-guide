@@ -21,6 +21,16 @@ body {
   overflow: hidden;
 }
 
+button:focus,
+button:focus-visible {
+  outline: 3px solid black;
+}
+
+a:focus,
+a:focus-visible {
+  outline: 3px solid black;
+}
+
 /* a {
   font-weight: 500;
   color: #646cff;

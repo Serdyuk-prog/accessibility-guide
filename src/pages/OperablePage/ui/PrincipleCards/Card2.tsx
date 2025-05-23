@@ -2,6 +2,7 @@ import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import BlockModal from '@/shared/modals/BlockModal/BlockModal';
 import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
 import { useState, useRef } from 'react';
+import { FaStopwatch } from 'react-icons/fa6';
 
 const ContentMultimediaCard = () => {
   return (
@@ -93,6 +94,7 @@ export const Card2 = () => {
       <PrincipleCard
         header="Отсутствие временных ограничений"
         icon="stopwatch"
+        iconElement={<FaStopwatch size={50} color="#E67E58" />}
         content={<ContentMultimediaCard />}
         buttonText="Требования"
         onButtonClick={toggleBlockModal}

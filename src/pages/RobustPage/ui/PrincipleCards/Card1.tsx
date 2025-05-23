@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
 import { TextLink } from '@/shared/ui/TextLink/TextLink';
 import DialogModal from '@/shared/modals/DialogModal/DialogModal';
+import { FaCheckSquare } from 'react-icons/fa';
 
 const CardModal = () => {
   return (
@@ -69,6 +70,7 @@ export const Card1 = () => {
       <PrincipleCard
         header="Валидная и семантическая разметка"
         icon="check-mark-button"
+        iconElement={<FaCheckSquare size={50} color="#3767CB" />} 
         content={<CardContent />}
         buttonText="Валидный HTML"
         onButtonClick={() => modalRef.current?.showModal()}

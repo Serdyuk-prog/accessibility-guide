@@ -31,7 +31,7 @@ export const MainHeader = () => {
   return (
     <header className="main-header">
       <div className="main-header-logo">
-        <HeaderLink to="/">WCAG 2.2</HeaderLink>
+        <HeaderLink to="/">OpenWCAG</HeaderLink>
       </div>
       {width > 1150 && (
         <nav

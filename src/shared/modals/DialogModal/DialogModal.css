@@ -1,5 +1,5 @@
 .dialog-modal::backdrop {
-  background-color: rgba(9, 9, 9, 0.4);
+  background-color: rgba(0, 0, 0, 0.44);
 }
 
 .dialog-modal {

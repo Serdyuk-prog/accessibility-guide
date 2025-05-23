@@ -2,6 +2,7 @@ import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import DialogModal from '@/shared/modals/DialogModal/DialogModal';
 import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
 import { useRef } from 'react';
+import { FaGear } from 'react-icons/fa6';
 
 const CardModal = () => {
   return (
@@ -89,6 +90,7 @@ export const Card3 = () => {
       <PrincipleCard
         header="Устойчивость к изменениям"
         icon="gear"
+        iconElement={<FaGear size={50} color="#EE8EAC" />} 
         content={<CardContent />}
         buttonText="Принципы будущей совместимости"
         onButtonClick={() => modalRef.current?.showModal()}

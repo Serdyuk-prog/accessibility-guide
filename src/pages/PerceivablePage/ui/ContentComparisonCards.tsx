@@ -39,6 +39,7 @@ export const ContentComparisonCard2Error = () => {
         viewBox="0 0 135 43"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden
       >
         <rect width="135" height="43" rx="8" fill="black" />
         <path
@@ -64,6 +65,7 @@ export const ContentComparisonCard2Success = () => {
         viewBox="0 0 135 43"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden
       >
         <rect x="0.5" y="0.5" width="134" height="42" rx="7.5" fill="#EE8EAC" />
         <rect x="0.5" y="0.5" width="134" height="42" rx="7.5" stroke="black" />

@@ -1,6 +1,7 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import DialogModal from '@/shared/modals/DialogModal/DialogModal';
 import { useRef, useState } from 'react';
+import { IoHelpBuoySharp } from 'react-icons/io5';
 
 const CardModal = () => {
   return (
@@ -43,6 +44,7 @@ export const Card3 = () => {
       <PrincipleCard
         header="Помощь при ошибках"
         icon="ring-buoy"
+        iconElement={<IoHelpBuoySharp size={50} color="#EE8EAC" />}
         content={<CardContent />}
         buttonText="Что проверять?"
         onButtonClick={() => modalRef.current?.showModal()}

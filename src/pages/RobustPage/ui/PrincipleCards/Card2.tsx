@@ -3,6 +3,7 @@ import BlockModal from '@/shared/modals/BlockModal/BlockModal';
 import DialogModal from '@/shared/modals/DialogModal/DialogModal';
 import { CodeBlock } from '@/shared/ui/CodeBlock/CodeBlock';
 import { useState, useRef } from 'react';
+import { FaPuzzlePiece } from 'react-icons/fa6';
 
 const CardModal = () => {
   return (
@@ -80,6 +81,7 @@ export const Card2 = () => {
       <PrincipleCard
         header="Совместимость с вспомогательными технологиями"
         icon="puzzle-piece"
+        iconElement={<FaPuzzlePiece size={50} color="#E67E58" />} 
         content={<CardContent />}
         buttonText="Как обеспечить совместимость?"
         onButtonClick={() => modalRef.current?.showModal()}

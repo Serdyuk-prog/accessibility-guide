@@ -4,6 +4,7 @@ import './PrincipleCard.css';
 import { Button } from '@/shared/ui/Button/Button';
 import { ButtonLink } from '@/shared/ui/ButtonLink/ButtonLink';
 
+
 interface IPrincipleCardProps {
   header: string;
   content: React.ReactNode;
@@ -13,6 +14,7 @@ interface IPrincipleCardProps {
   buttonRef?: React.RefObject<HTMLButtonElement>;
   linkText?: string;
   linkAddress?: string;
+  iconElement?: React.ReactNode;
 }
 
 export const PrincipleCard = (props: IPrincipleCardProps) => {
@@ -25,13 +27,15 @@ export const PrincipleCard = (props: IPrincipleCardProps) => {
     buttonRef,
     linkText,
     linkAddress,
+    iconElement
   } = props;
   return (
     <div className="principle-card-wrapper">
       <InfoCard>
         <div className="principle-card">
           <div className="principle-card-content">
-            {icon && <Emoji name={icon} className="principle-card-icon" />}
+            {icon && !iconElement && <Emoji name={icon} className="principle-card-icon" />}
+            {iconElement}
             <div style={{"fontSize": "24px", "fontWeight": 700}} className="principle-card-header">{header}</div>
             <div>{content}</div>
           </div>

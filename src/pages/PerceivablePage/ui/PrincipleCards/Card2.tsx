@@ -1,6 +1,7 @@
 import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import BlockModal from '@/shared/modals/BlockModal/BlockModal';
 import { useState, useRef } from 'react';
+import { PiPopcorn } from 'react-icons/pi';
 
 const ContentMultimediaCard = () => {
   return (
@@ -84,6 +85,7 @@ export const Card2 = () => {
       <PrincipleCard
         header="Адаптация мультимедиа"
         icon="popcorn"
+        iconElement={<PiPopcorn size={50} color="#E67E58" />}
         content={<ContentMultimediaCard />}
         buttonText="Чеклист для видео"
         onButtonClick={toggleBlockModal}

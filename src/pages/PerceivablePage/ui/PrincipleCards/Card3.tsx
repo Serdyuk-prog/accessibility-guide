@@ -2,6 +2,7 @@ import { PrincipleCard } from '@/entities/PrincipleCard/PrincipleCard';
 import BlockModal from '@/shared/modals/BlockModal/BlockModal';
 import { TextLink } from '@/shared/ui/TextLink/TextLink';
 import { useRef, useState } from 'react';
+import { IoIosContrast } from 'react-icons/io';
 
 const PrincipleCardModal = () => {
   return (
@@ -51,6 +52,7 @@ export const Card3 = () => {
       <PrincipleCard
         header="Контраст и читаемость"
         icon="a-button-blood-type"
+        iconElement={<IoIosContrast size={50} />}
         content={
           'Важно соблюдать требования по минимальному соотношению контраста текста и фона: 4.5:1. Проверить контраст довольно легко - нужно воспользоваться инструментами проверки. '
         }
