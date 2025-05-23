@@ -123,4 +123,5 @@ ul {
   padding: 0px;
   padding-inline-start: 30px;
   margin: 0px;
+  list-style-type: '- ';
 }
