@@ -19,7 +19,7 @@ export const ComparisonCard = (props: IComparisonCardProps) => {
               Ошибка
               {/* <Emoji name="prohibited" className="comparison-card-icon" /> */}
               {/* E62F08 */}
-              <RiProhibitedLine size={30} color='#E62F08' /> 
+              <RiProhibitedLine size={30} color='#E62F08' aria-hidden/> 
             </span>
             <div className="comparison-card-description">
               {props.contentProblem}
@@ -32,7 +32,7 @@ export const ComparisonCard = (props: IComparisonCardProps) => {
                 name="check-mark-button"
                 className="comparison-card-icon"
               /> */}
-              <FaCheckCircle size={30} color='#00BD00' /> 
+              <FaCheckCircle size={30} color='#00BD00' aria-hidden/> 
             </span>
             <div className="comparison-card-description">
               {props.contentSolution}

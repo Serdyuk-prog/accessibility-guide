@@ -35,7 +35,7 @@ export const PrincipleCard = (props: IPrincipleCardProps) => {
         <div className="principle-card">
           <div className="principle-card-content">
             {icon && !iconElement && <Emoji name={icon} className="principle-card-icon" />}
-            {iconElement}
+            <span aria-hidden>{iconElement}</span>
             <div style={{"fontSize": "24px", "fontWeight": 700}} className="principle-card-header">{header}</div>
             <div>{content}</div>
           </div>
